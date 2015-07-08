@@ -3,7 +3,7 @@ $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'cucumber-wire'
-  s.version     = File.read(File.dirname(__FILE__) + '/lib/cucumber/wire/version'
+  s.version     = File.read(File.dirname(__FILE__) + "/lib/cucumber/wire/version")
   s.authors     = ["Matt Wynne"]
   s.description = "Wire protocol for Cucumber"
   s.summary     = "cucumber-wire-#{s.version}"
@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bundler',   '>= 1.3.5'
   s.add_development_dependency 'rake',      '>= 0.9.2'
   s.add_development_dependency 'rspec',     '~> 3'
+  s.add_development_dependency 'aruba',     '~> 0'
 
   s.rubygems_version = ">= 1.6.1"
   s.files            = `git ls-files`.split("\n").reject {|path| path =~ /\.gitignore$/ }
