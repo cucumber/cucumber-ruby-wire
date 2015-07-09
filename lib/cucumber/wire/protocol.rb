@@ -3,9 +3,9 @@ require 'cucumber/wire/protocol/requests'
 module Cucumber
   module Wire
     module Protocol
-      def step_matches(name_to_match, name_to_report)
+      def step_matches(name_to_match)
         handler = Requests::StepMatches.new(self)
-        handler.execute(name_to_match, name_to_report)
+        handler.execute(name_to_match)
       end
 
       def snippet_text(step_keyword, step_name, multiline_arg_class_name)

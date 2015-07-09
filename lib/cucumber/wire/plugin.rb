@@ -7,6 +7,7 @@ require 'cucumber/wire/exception'
 require 'cucumber/wire/step_definition'
 require 'cucumber/wire/snippet'
 require 'cucumber/configuration'
+require 'cucumber/step_match'
 
 module Cucumber
   module Wire
@@ -25,8 +26,18 @@ module Cucumber
         @connections << Connection.new(config)
       end
 
-      def step_matches(step_name, formatted_step_name)
-        @connections.map{ |c| c.step_matches(step_name, formatted_step_name)}.flatten
+      def find_match(test_step)
+        matches = step_matches(test_step.name)
+        if matches.any?
+          # TODO: handle ambiguous matches
+          return matches.first
+        else
+          return NoStepMatch.new(test_step.source.last, test_step.name)
+        end
+      end
+
+      def step_matches(step_name)
+        @connections.map{ |c| c.step_matches(step_name)}.flatten
       end
 
       def begin_scenario(scenario)

@@ -6,8 +6,8 @@ module Cucumber
     module Protocol
       module Requests
         class StepMatches < RequestHandler
-          def execute(name_to_match, name_to_report)
-            @name_to_match, @name_to_report = name_to_match, name_to_report
+          def execute(name_to_match)
+            @name_to_match = name_to_match
             request_params = {
               :name_to_match => name_to_match
             }
@@ -25,7 +25,7 @@ module Cucumber
           private
 
           def create_step_match(raw_step_match)
-            step_definition = WireStepDefinition.new(@connection, raw_step_match)
+            step_definition = StepDefinition.new(@connection, raw_step_match)
             step_args = raw_step_match['args'].map do |raw_arg|
               Gherkin::Formatter::Argument.new(raw_arg['pos'], raw_arg['val'])
             end
