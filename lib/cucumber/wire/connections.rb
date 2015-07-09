@@ -13,8 +13,11 @@ module Cucumber
   module Wire
 
     class Connections
+      attr_reader :connections
+      private :connections
 
       def initialize(connections)
+        raise ArgumentError unless connections
         @connections = connections
       end
 
@@ -29,17 +32,17 @@ module Cucumber
       end
 
       def step_matches(step_name)
-        @connections.map{ |c| c.step_matches(step_name)}.flatten
+        connections.map{ |c| c.step_matches(step_name)}.flatten
       end
 
       def begin_scenario(scenario)
-        @connections.each { |c| c.begin_scenario(scenario) }
+        connections.each { |c| c.begin_scenario(scenario) }
         @current_scenario = scenario
       end
 
       def end_scenario
         scenario = @current_scenario
-        @connections.each { |c| c.end_scenario(scenario) }
+        connections.each { |c| c.end_scenario(scenario) }
         @current_scenario = nil
       end
 
