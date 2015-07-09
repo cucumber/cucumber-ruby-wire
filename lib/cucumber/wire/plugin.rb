@@ -16,14 +16,8 @@ module Cucumber
     # language API.
     class Plugin
 
-      def initialize(configuration = Cucumber::Configuration.new)
-        @connections = []
-        configuration.register_snippet_generator Snippet::Generator.new(@connections)
-      end
-
-      def load_code_file(wire_file)
-        config = Configuration.from_file(wire_file)
-        @connections << Connection.new(config)
+      def initialize(connections)
+        @connections = connections
       end
 
       def find_match(test_step)
