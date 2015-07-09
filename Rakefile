@@ -1,9 +1,9 @@
 task default: [:unit_tests, :acceptance_tests]
 
 task :unit_tests do
-  `rspec`
+  sh "bundle exec rspec"
 end
 
 task :acceptance_tests do
-  `cucumber`
+  sh "bundle exec cucumber"
 end
