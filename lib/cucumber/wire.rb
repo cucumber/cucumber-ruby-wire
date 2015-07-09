@@ -1,4 +1,6 @@
+require 'cucumber/wire/plugin'
+
 AfterConfiguration do |config|
   # TODO
-  Wire::Plugin.new(config)
+  Cucumber::Wire::Plugin.new(config)
 end

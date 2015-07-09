@@ -1,4 +1,3 @@
-@wire
 Feature: Handle unexpected response
 
   When the server sends us back a message we don't understand, this is how Cucumber will behave.
@@ -16,6 +15,10 @@ Feature: Handle unexpected response
       host: localhost
       port: 54321
 
+      """
+    And a file named "features/support/env.rb" with:
+      """
+      require "cucumber/wire"
       """
 
   Scenario: Unexpected response

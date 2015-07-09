@@ -1,4 +1,4 @@
-@wire
+@announce
 Feature: Invoke message
 
   Assuming a StepMatch was returned for a given step name, when it's time to
@@ -25,6 +25,10 @@ Feature: Invoke message
           Given we're all wired
 
       """
+    And a file named "features/support/env.rb" with:
+      """
+      require "cucumber/wire"
+      """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
       host: localhost
@@ -42,7 +46,7 @@ Feature: Invoke message
       | ["invoke",{"id":"1","args":[]}]                      | ["pending", "I'll do it later"]     |
       | ["end_scenario"]                                     | ["success"]                         |
     When I run `cucumber -f pretty -q`
-    And it should pass with:
+    And it should pass with exactly:
       """
       Feature: High strung
 
@@ -211,6 +215,3 @@ Feature: Invoke message
       | begin_scenario |
       | invoke         |
       | end_scenario   |
-
-
-

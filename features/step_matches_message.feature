@@ -1,4 +1,3 @@
-@wire
 Feature: Step matches message
 
   When the features have been parsed, Cucumber will send a `step_matches`
@@ -22,6 +21,10 @@ Feature: Step matches message
         Scenario: Wired
           Given we're all wired
 
+      """
+    And a file named "features/support/env.rb" with:
+      """
+      require "cucumber/wire"
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
@@ -78,4 +81,3 @@ Feature: Step matches message
 
       """
     And the stderr should not contain anything
-

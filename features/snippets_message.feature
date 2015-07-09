@@ -1,4 +1,3 @@
-@wire
 Feature: Snippets message
 
   If a step doesn't match, Cucumber will ask the wire server to return a snippet of code for a
@@ -11,6 +10,10 @@ Feature: Snippets message
         Scenario: Wired
           Given we're all wired
 
+      """
+    And a file named "features/support/env.rb" with:
+      """
+      require "cucumber/wire"
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """

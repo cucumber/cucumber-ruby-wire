@@ -1,4 +1,3 @@
-@wire
 Feature: Wire protocol table diffing
 
   In order to use the amazing functionality in the Cucumber table object
@@ -12,6 +11,10 @@ Feature: Wire protocol table diffing
         Scenario: Wired
           Given we're all wired
 
+      """
+    And a file named "features/support/env.rb" with:
+      """
+      require "cucumber/wire"
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
@@ -111,7 +114,7 @@ Feature: Wire protocol table diffing
       (::) failed steps (::)
 
       Tables were not identical:
-      
+
         | (-) a | (+) b |
        (Cucumber::MultilineArgument::DataTable::Different)
       features/wired.feature:3:in `Given we're all wired'

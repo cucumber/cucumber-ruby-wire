@@ -27,7 +27,7 @@ module WireHelper
   def start_wire_server
     @messages_received = []
     reader, writer = IO.pipe
-    @wire_pid = fork { 
+    @wire_pid = fork {
       reader.close
       @server.run(writer)
     }
@@ -49,10 +49,10 @@ module WireHelper
   end
 end
 
-Before('@wire') do
+Before do
   extend(WireHelper)
 end
 
-After('@wire') do
+After do
   stop_wire_server
 end

@@ -1,10 +1,13 @@
-@wire
 Feature: Wire protocol tags
 
-  In order to use Before and After hooks in a wire server, we send tags with the 
+  In order to use Before and After hooks in a wire server, we send tags with the
   scenario in the begin_scenario and end_scenario messages
 
   Background:
+    Given a file named "features/support/env.rb" with:
+      """
+      require "cucumber/wire"
+      """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
       host: localhost
@@ -17,7 +20,7 @@ Feature: Wire protocol tags
       """
         @foo @bar
         Feature: Wired
-        
+
           @baz
           Scenario: Everybody's Wired
             Given we're all wired
@@ -35,7 +38,7 @@ Feature: Wire protocol tags
       """
       @foo @bar
       Feature: Wired
-      
+
         @baz
         Scenario: Everybody's Wired
           Given we're all wired
@@ -50,11 +53,11 @@ Feature: Wire protocol tags
     """
       @foo @bar
       Feature: Wired
-      
+
         @baz
         Scenario Outline: Everybody's Wired
           Given we're all <something>
-          
+
         Examples:
           | something |
           | wired     |
@@ -72,12 +75,12 @@ Feature: Wire protocol tags
     """
     @foo @bar
     Feature: Wired
-    
+
       @baz
       Scenario Outline: Everybody's Wired
         Given we're all <something>
 
-        Examples: 
+        Examples:
           | something |
           | wired     |
 

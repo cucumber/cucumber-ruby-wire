@@ -1,4 +1,3 @@
-@wire
 Feature: Wire protocol timeouts
 
   We don't want Cucumber to hang forever on a wire server that's not even there,
@@ -6,13 +5,19 @@ Feature: Wire protocol timeouts
   to take a while to execute, if that's what they need.
 
   Background:
-    And a file named "features/wired.feature" with:
+    Given a file named "features/wired.feature" with:
+
       """
       Feature: Telegraphy
         Scenario: Wired
           Given we're all wired
 
       """
+    And a file named "features/support/env.rb" with:
+      """
+      require "cucumber/wire"
+      """
+
 
   Scenario: Try to talk to a server that's not there
     Given a file named "features/step_definitions/some_remote_place.wire" with:

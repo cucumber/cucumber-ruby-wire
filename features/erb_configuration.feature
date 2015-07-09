@@ -1,4 +1,3 @@
-@wire
 Feature: ERB configuration
 
   As a developer on server with multiple users
