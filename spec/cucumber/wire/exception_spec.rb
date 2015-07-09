@@ -1,4 +1,5 @@
-require 'cucumber/wire/plugin'
+require 'cucumber/wire/exception'
+require 'cucumber/wire/configuration'
 
 module Cucumber
   module Wire

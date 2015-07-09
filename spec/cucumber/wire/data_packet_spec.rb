@@ -1,4 +1,4 @@
-require 'cucumber/wire/plugin'
+require 'cucumber/wire/data_packet'
 
 module Cucumber
   module Wire

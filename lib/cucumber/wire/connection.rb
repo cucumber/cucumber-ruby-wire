@@ -1,5 +1,7 @@
 require 'timeout'
 require 'cucumber/wire/protocol'
+require 'cucumber/wire/exception'
+require 'cucumber/wire/data_packet'
 
 module Cucumber
   module Wire

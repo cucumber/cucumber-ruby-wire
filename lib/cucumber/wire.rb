@@ -1,4 +1,4 @@
-require 'cucumber/wire/plugin'
+require 'cucumber/wire/connections'
 
 module Cucumber
   module Wire
@@ -11,8 +11,8 @@ module Cucumber
       end
 
       def call
-        plugin = Plugin.new(connections)
-        config.filters << Filters::ActivateSteps.new(plugin)
+        connections = Connections.new(connections)
+        config.filters << Filters::ActivateSteps.new(connections)
         config.register_snippet_generator Snippet::Generator.new(connections)
       end
 

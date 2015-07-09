@@ -12,9 +12,7 @@ require 'cucumber/step_match'
 module Cucumber
   module Wire
 
-    # The wire-protocol (language independent) implementation of the programming
-    # language API.
-    class Plugin
+    class Connections
 
       def initialize(connections)
         @connections = connections
