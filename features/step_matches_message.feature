@@ -62,6 +62,7 @@ Feature: Step matches message
 
       """
 
+  @todo
   Scenario: Step matches returns details about the remote step definition
 
     Optionally, the StepMatch can also contain a source reference, and a native
