@@ -44,9 +44,6 @@ Feature: Snippets message
       """
     And the output should contain:
       """
-
-      You can implement step definitions for undefined steps with these snippets:
-
       foo()
         bar;
       baz

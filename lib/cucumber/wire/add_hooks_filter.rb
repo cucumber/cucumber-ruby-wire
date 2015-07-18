@@ -8,6 +8,7 @@ module Cucumber
       end
 
       def before_hook(test_case)
+        # TODO: is this dependency on Cucumber::Hooks OK? Feels a bit internal..
         # TODO: how do we express the location of the hook? Should we create one hook per connection so we can use the host:port of the connection?
         Cucumber::Hooks.before_hook(test_case.source, Core::Ast::Location.new('TODO:wire')) do
           connections.begin_scenario(test_case)

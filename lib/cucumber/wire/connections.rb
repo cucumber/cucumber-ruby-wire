@@ -43,6 +43,10 @@ module Cucumber
         connections.each { |c| c.end_scenario(test_case) }
       end
 
+      def snippets(code_keyword, step_name, multiline_arg_class_name)
+        connections.map { |c| c.snippet_text(code_keyword, step_name, multiline_arg_class_name) }.flatten
+      end
+
     end
   end
 end

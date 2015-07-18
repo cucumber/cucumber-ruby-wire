@@ -8,10 +8,7 @@ module Cucumber
         end
 
         def call(code_keyword, step_name, multiline_arg, snippet_type)
-          snippets = @connections.map do |remote|
-            remote.snippet_text(code_keyword, step_name, MultilineArgClassName.new(multiline_arg).to_s)
-          end
-          snippets.flatten.join("\n")
+          @connections.snippets(code_keyword, step_name, MultilineArgClassName.new(multiline_arg).to_s).join("\n")
         end
 
         class MultilineArgClassName
