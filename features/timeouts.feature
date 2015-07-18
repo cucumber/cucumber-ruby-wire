@@ -49,19 +49,19 @@ Feature: Wire protocol timeouts
       | ["invoke",{"id":"1","args":["wired"]}]               | ["success"]                                                  |
       | ["end_scenario"]                                     | ["success"]                                                  |
     And the wire server takes 0.2 seconds to respond to the invoke message
-    When I run `cucumber -f pretty`
+    When I run `cucumber -f pretty -q`
     Then the stderr should not contain anything
-    And it should fail with:
+    And it should fail with exactly:
       """
       Feature: Telegraphy
 
-        Scenario: Wired         # features/wired.feature:2
-          Given we're all wired # Unknown
+        Scenario: Wired
+          Given we're all wired
             Timed out calling wire server with message 'invoke' (Timeout::Error)
             features/wired.feature:3:in `Given we're all wired'
 
       Failing Scenarios:
-      cucumber features/wired.feature:2 # Scenario: Wired
+      cucumber features/wired.feature:2
 
       1 scenario (1 failed)
       1 step (1 failed)
