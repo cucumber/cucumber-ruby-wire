@@ -101,32 +101,27 @@ module Cucumber
           alias :handle_step_failed :handle_fail
         end
 
-        module Tags
-          def clean_tag_names(scenario)
-            scenario.tags.map { |tag| tag.name.gsub(/^@/, '') }.sort
+        class HookRequestHandler < RequestHandler
+          def execute(test_case)
+            super(request_params(test_case))
           end
 
-          def request_params(scenario)
-            return nil unless scenario.tags.any?
-            { "tags" => clean_tag_names(scenario) }
+          private
+
+          def request_params(test_case)
+            return nil unless test_case.tags.any?
+            { "tags" => clean_tag_names(test_case.tags) }
           end
-        end
 
-        class BeginScenario < RequestHandler
-          include Tags
-
-          def execute(scenario)
-            super(request_params(scenario))
+          def clean_tag_names(tags)
+            tags.map { |tag| tag.name.gsub(/^@/, '') }.sort
           end
         end
 
-        class EndScenario < RequestHandler
-          include Tags
+        BeginScenario = Class.new(HookRequestHandler)
 
-          def execute(scenario)
-            super(request_params(scenario))
-          end
-        end
+        EndScenario = Class.new(HookRequestHandler)
+
       end
     end
   end
