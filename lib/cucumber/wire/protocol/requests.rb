@@ -27,6 +27,7 @@ module Cucumber
           def create_step_match(raw_step_match)
             step_definition = StepDefinition.new(@connection, raw_step_match)
             step_args = raw_step_match['args'].map do |raw_arg|
+              # TODO: stop using a Gherkin type here. We can define something in Cucumber instead.
               Gherkin::Formatter::Argument.new(raw_arg['pos'], raw_arg['val'])
             end
             step_match(step_definition, step_args)

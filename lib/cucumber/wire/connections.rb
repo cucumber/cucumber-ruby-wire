@@ -23,12 +23,9 @@ module Cucumber
 
       def find_match(test_step)
         matches = step_matches(test_step.name)
-        if matches.any?
-          # TODO: handle ambiguous matches
-          return matches.first
-        else
-          return NoStepMatch.new(test_step.source.last, test_step.name)
-        end
+        return unless matches.any?
+        # TODO: handle ambiguous matches
+        return matches.first
       end
 
       def step_matches(step_name)
