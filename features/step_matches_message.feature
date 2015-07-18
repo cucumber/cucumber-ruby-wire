@@ -1,3 +1,4 @@
+@announce
 Feature: Step matches message
 
   When the features have been parsed, Cucumber will send a `step_matches`
@@ -22,7 +23,7 @@ Feature: Step matches message
           Given we're all wired
 
       """
-    And a file named "features/support/env.rb" with:
+    And a file named "features/support/wire.rb" with:
       """
       require "cucumber/wire"
       """
