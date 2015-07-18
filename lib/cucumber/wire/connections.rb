@@ -35,15 +35,12 @@ module Cucumber
         connections.map{ |c| c.step_matches(step_name)}.flatten
       end
 
-      def begin_scenario(scenario)
-        connections.each { |c| c.begin_scenario(scenario) }
-        @current_scenario = scenario
+      def begin_scenario(test_case)
+        connections.each { |c| c.begin_scenario(test_case) }
       end
 
-      def end_scenario
-        scenario = @current_scenario
-        connections.each { |c| c.end_scenario(scenario) }
-        @current_scenario = nil
+      def end_scenario(test_case)
+        connections.each { |c| c.end_scenario(test_case) }
       end
 
     end
