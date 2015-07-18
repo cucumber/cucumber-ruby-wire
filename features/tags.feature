@@ -1,3 +1,4 @@
+@announce
 Feature: Wire protocol tags
 
   In order to use Before and After hooks in a wire server, we send tags with the
@@ -71,7 +72,7 @@ Feature: Wire protocol tags
     | ["end_scenario", {"tags":["bar","baz","foo"]}]       | ["success"]                         |
   When I run `cucumber -f pretty -q`
   Then the stderr should not contain anything
-  And it should pass with:
+  And it should pass with exactly:
     """
     @foo @bar
     Feature: Wired
@@ -80,7 +81,7 @@ Feature: Wire protocol tags
       Scenario Outline: Everybody's Wired
         Given we're all <something>
 
-        Examples:
+        Examples: 
           | something |
           | wired     |
 
