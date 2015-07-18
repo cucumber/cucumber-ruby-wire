@@ -32,9 +32,9 @@ Feature: Wire protocol table diffing
       | ["invoke",{"id":"1","args":[]}]                      | ["diff",[[["a","b"],["c","d"]],[["x","y"],["z","z"]]]]                                               |
       | ["diff_failed"]                                      | ["fail",{"message":"Not same", "exception":"DifferentException", "backtrace":["a.cs:12","b.cs:34"]}] |
       | ["end_scenario"]                                     | ["success"]                                                                                          |
-    When I run `cucumber -f progress --backtrace`
+    When I run `cucumber -f progress --backtrace -q`
     Then the stderr should not contain anything
-    And it should fail with:
+    And it should fail with exactly:
       """
       F
 
@@ -46,7 +46,7 @@ Feature: Wire protocol table diffing
       features/wired.feature:3:in `Given we're all wired'
 
       Failing Scenarios:
-      cucumber features/wired.feature:2 # Scenario: Wired
+      cucumber features/wired.feature:2
 
       1 scenario (1 failed)
       1 step (1 failed)
@@ -61,8 +61,8 @@ Feature: Wire protocol table diffing
       | ["invoke",{"id":"1","args":[]}]                      | ["diff",[[["a"],["b"]],[["a"],["b"]]]] |
       | ["diff_ok"]                                          | ["success"]                            |
       | ["end_scenario"]                                     | ["success"]                            |
-    When I run `cucumber -f progress`
-    Then it should pass with:
+    When I run `cucumber -f progress -q`
+    Then it should pass with exactly:
       """
       .
 
@@ -80,18 +80,18 @@ Feature: Wire protocol table diffing
       | ["invoke",{"id":"1","args":[]}]                      | ["diff",[[["a"],["b"]],[["a"],["b"]]]]                        |
       | ["diff_ok"]                                          | ["fail",{"message":"I wanted things to be different for us"}] |
       | ["end_scenario"]                                     | ["success"]                                                   |
-    When I run `cucumber -f progress`
-    Then it should fail with:
+    When I run `cucumber -f progress -q`
+    Then it should fail with exactly:
       """
       F
 
       (::) failed steps (::)
 
-      I wanted things to be different for us (Cucumber::WireSupport::WireException)
+      I wanted things to be different for us (Cucumber::Wire::Exception)
       features/wired.feature:3:in `Given we're all wired'
 
       Failing Scenarios:
-      cucumber features/wired.feature:2 # Scenario: Wired
+      cucumber features/wired.feature:2
 
       1 scenario (1 failed)
       1 step (1 failed)
@@ -106,7 +106,7 @@ Feature: Wire protocol table diffing
       | ["begin_scenario"]                                   | ["success"]                         |
       | ["invoke",{"id":"1","args":[]}]                      | ["diff!",[[["a"]],[["b"]]]]         |
       | ["end_scenario"]                                     | ["success"]                         |
-    When I run `cucumber -f progress`
+    When I run `cucumber -f progress -q`
     And it should fail with exactly:
       """
       F
@@ -120,10 +120,9 @@ Feature: Wire protocol table diffing
       features/wired.feature:3:in `Given we're all wired'
 
       Failing Scenarios:
-      cucumber features/wired.feature:2 # Scenario: Wired
+      cucumber features/wired.feature:2
 
       1 scenario (1 failed)
       1 step (1 failed)
-      0m0.012s
 
       """
