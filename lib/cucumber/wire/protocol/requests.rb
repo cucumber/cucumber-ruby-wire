@@ -1,5 +1,5 @@
 require 'cucumber/wire/request_handler'
-require 'gherkin/formatter/argument'
+require 'cucumber/gherkin/formatter/argument'
 
 module Cucumber
   module Wire
