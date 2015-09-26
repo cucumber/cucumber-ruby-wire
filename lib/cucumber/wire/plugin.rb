@@ -12,7 +12,7 @@ module Cucumber
       end
 
       def install
-        connections = Connections.new(wire_files.map { |wire_file| create_connection(wire_file) })
+        connections = Connections.new(wire_files.map { |f| create_connection(f) }, @config)
         config.filters << Filters::ActivateSteps.new(connections, @config)
         config.filters << AddHooksFilter.new(connections) unless @config.dry_run?
         config.register_snippet_generator Snippet::Generator.new(connections)

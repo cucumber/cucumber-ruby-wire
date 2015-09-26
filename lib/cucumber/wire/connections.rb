@@ -16,16 +16,22 @@ module Cucumber
       attr_reader :connections
       private :connections
 
-      def initialize(connections)
+      def initialize(connections, configuration)
         raise ArgumentError unless connections
         @connections = connections
+        @configuration = configuration
       end
 
       def find_match(test_step)
         matches = step_matches(test_step.name)
         return unless matches.any?
-        # TODO: handle ambiguous matches
-        return matches.first
+        # TODO: handle ambiguous matches (push to cucumber?)
+        match = matches.first
+
+        # TODO: move this onto Filters::ActivateSteps
+        @configuration.notify Events::StepMatch.new(test_step, match)
+
+        match
       end
 
       def step_matches(step_name)
