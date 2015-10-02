@@ -1,4 +1,3 @@
-@announce
 Feature: Invoke message
 
   Assuming a StepMatch was returned for a given step name, when it's time to

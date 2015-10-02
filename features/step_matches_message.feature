@@ -1,4 +1,3 @@
-@announce
 Feature: Step matches message
 
   When the features have been parsed, Cucumber will send a `step_matches`
