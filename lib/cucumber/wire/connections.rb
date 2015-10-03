@@ -26,12 +26,7 @@ module Cucumber
         matches = step_matches(test_step.name)
         return unless matches.any?
         # TODO: handle ambiguous matches (push to cucumber?)
-        match = matches.first
-
-        # TODO: move this onto Filters::ActivateSteps
-        @configuration.notify Events::StepMatch.new(test_step, match)
-
-        match
+        matches.first
       end
 
       def step_matches(step_name)
