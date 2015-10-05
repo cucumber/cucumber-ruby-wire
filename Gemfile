@@ -13,8 +13,8 @@ unless ENV['CUCUMBER_USE_RELEASED_GEMS']
   # cucumber-core gem
   core_path = File.expand_path("../../cucumber-ruby-core", __FILE__)
   if File.exist?(core_path) && !ENV['CUCUMBER_USE_GIT_CORE']
-    gem "cucumber-core", path: core_path, branch: "include-arbitary-data-on-step"
+    gem "cucumber-core", path: core_path
   else
-    gem 'cucumber-core', :git => "git://github.com/cucumber/cucumber-ruby-core.git", branch: "include-arbitary-data-on-step"
+    gem 'cucumber-core', :git => "git://github.com/cucumber/cucumber-ruby-core.git"
   end
 end
