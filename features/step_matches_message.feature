@@ -22,10 +22,6 @@ Feature: Step matches message
           Given we're all wired
 
       """
-    And a file named "features/support/wire.rb" with:
-      """
-      require "cucumber/wire"
-      """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
       host: localhost

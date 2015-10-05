@@ -12,10 +12,6 @@ Feature: ERB configuration
           Given we're all wired
 
       """
-    And a file named "features/support/env.rb" with:
-      """
-      require "cucumber/wire"
-      """
 
   Scenario: ERB is used in the wire file which references an environment variable that is not set
       Given a file named "features/step_definitions/server.wire" with:

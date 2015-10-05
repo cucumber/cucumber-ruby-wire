@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
   s.required_ruby_version = ">= 1.9.3"
 
-  s.add_dependency 'cucumber', '~> 2.1.0'
+  s.add_development_dependency 'cucumber', '~> 2.1.0'
 
   s.add_development_dependency 'bundler',   '>= 1.3.5'
   s.add_development_dependency 'rake',      '>= 0.9.2'

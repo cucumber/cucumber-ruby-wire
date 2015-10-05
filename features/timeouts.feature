@@ -6,18 +6,12 @@ Feature: Wire protocol timeouts
 
   Background:
     Given a file named "features/wired.feature" with:
-
       """
       Feature: Telegraphy
         Scenario: Wired
           Given we're all wired
 
       """
-    And a file named "features/support/env.rb" with:
-      """
-      require "cucumber/wire"
-      """
-
 
   Scenario: Try to talk to a server that's not there
     Given a file named "features/step_definitions/some_remote_place.wire" with:

@@ -14,7 +14,7 @@ Given /^the wire server takes (.*) seconds to respond to the invoke message$/ do
 end
 
 Given /^I have environment variable (\w+) set to "([^"]*)"$/ do |variable, value|
-  set_env(variable, value)
+  set_environment_variable(variable, value)
 end
 
 Then(/^the wire server should have received the following messages:$/) do |expected_messages|

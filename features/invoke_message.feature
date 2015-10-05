@@ -24,10 +24,6 @@ Feature: Invoke message
           Given we're all wired
 
       """
-    And a file named "features/support/env.rb" with:
-      """
-      require "cucumber/wire"
-      """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
       host: localhost

@@ -4,11 +4,7 @@ Feature: Wire protocol tags
   scenario in the begin_scenario and end_scenario messages
 
   Background:
-    Given a file named "features/support/env.rb" with:
-      """
-      require "cucumber/wire"
-      """
-    And a file named "features/step_definitions/some_remote_place.wire" with:
+    Given a file named "features/step_definitions/some_remote_place.wire" with:
       """
       host: localhost
       port: 54321

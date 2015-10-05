@@ -16,10 +16,6 @@ Feature: Handle unexpected response
       port: 54321
 
       """
-    And a file named "features/support/env.rb" with:
-      """
-      require "cucumber/wire"
-      """
 
   Scenario: Unexpected response
     Given there is a wire server running on port 54321 which understands the following protocol:
