@@ -33,7 +33,7 @@ module Cucumber
           end
 
           def step_match(step_definition, step_args)
-            StepMatch.new(step_definition, @name_to_match, @name_to_report, step_args)
+            StepMatch.new(step_definition, @name_to_match, step_args)
           end
         end
 
