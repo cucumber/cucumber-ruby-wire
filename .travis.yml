@@ -11,6 +11,8 @@ rvm:
 matrix:
   allow_failures:
     - rvm: ruby-head
+    - rvm: 1.9.3
+    - rvm: jruby-1.7.12
   fast_finish: true
 
 # whitelist
