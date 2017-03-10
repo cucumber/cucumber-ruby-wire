@@ -5,9 +5,9 @@ unless ENV['CUCUMBER_USE_RELEASED_GEMS']
   # cucumber gem
   cucumber_path = File.expand_path("../../cucumber-ruby", __FILE__)
   if File.exist?(cucumber_path) && !ENV['CUCUMBER_USE_GIT']
-    gem "cucumber", path: cucumber_path, branch: "remove-wire-protocol-to-plugin"
+    gem "cucumber", path: cucumber_path
   else
-    gem "cucumber", :git => "git://github.com/cucumber/cucumber-ruby.git", branch: "remove-wire-protocol-to-plugin"
+    gem "cucumber", :git => "git://github.com/cucumber/cucumber-ruby.git"
   end
 
   # cucumber-core gem
