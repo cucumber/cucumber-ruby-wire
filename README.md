@@ -1,1 +1,3 @@
-Work in progress: See https://github.com/cucumber/cucumber-ruby/pull/878
+[![Build Status](https://travis-ci.org/cucumber/cucumber-ruby-wire.png?branch=master)](https://travis-ci.org/cucumber/cucumber-ruby-wire)
+
+# cucumber-wire
