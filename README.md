@@ -2,6 +2,12 @@
 
 # cucumber-wire
 
+This gem was extracted from the [cucumber gem](https://github.com/cucumber/cucumber-ruby), and remains a runtime dependency to that gem.
+
+Its tests are a bit hairy and prone to the occasional flicker.
+
+In the future, it may become an opt-in plugin rather than a direct dependency on every Cucumber.
+
 ## Configuration
 
 You can configure the connection using a YAML file called a `.wire` file:
