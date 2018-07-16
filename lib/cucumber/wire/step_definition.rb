@@ -1,4 +1,4 @@
-require 'cucumber/core/ast/location'
+require 'cucumber/core/test/location'
 
 module Cucumber
   module Wire
@@ -9,7 +9,7 @@ module Cucumber
         @connection = connection
         @id              = data['id']
         @regexp_source   = data['regexp'] || "Unknown"
-        @location        = Core::Ast::Location.from_file_colon_line(data['source'] || "unknown:0")
+        @location        = Core::Test::Location.from_file_colon_line(data['source'] || "unknown:0")
       end
 
       def invoke(args)
