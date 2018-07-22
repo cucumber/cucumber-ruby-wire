@@ -1,9 +1,10 @@
 module Cucumber
   module Wire
     class RequestHandler
-      def initialize(connection)
+      def initialize(connection, registry = nil)
         @connection = connection
         @message = underscore(self.class.name.split('::').last)
+        @registry = registry
       end
 
       def execute(request_params = nil)

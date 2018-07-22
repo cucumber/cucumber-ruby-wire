@@ -5,15 +5,16 @@ require 'cucumber/step_match_search'
 module Cucumber
   module Wire
     class Plugin
-      attr_reader :config
-      private :config
+      attr_reader :config, :registry
+      private :config, :registry
 
-      def initialize(config)
+      def initialize(config, registry)
         @config = config
+        @registry = registry
       end
 
       def install
-        connections = Connections.new(wire_files.map { |f| create_connection(f) }, @config)
+        connections = Connections.new(wire_files.map { |f| create_connection(f) }, config, registry)
         config.filters << Filters::ActivateSteps.new(StepMatchSearch.new(connections.method(:step_matches), @config), @config)
         config.filters << AddHooksFilter.new(connections) unless @config.dry_run?
         config.register_snippet_generator Snippet::Generator.new(connections)

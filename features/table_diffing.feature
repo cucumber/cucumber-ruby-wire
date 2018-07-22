@@ -39,7 +39,7 @@ Feature: Wire protocol table diffing
       Not same (DifferentException from localhost:54321)
       a.cs:12
       b.cs:34
-      features/wired.feature:3:in `Given we're all wired'
+      features/wired.feature:3:in `we're all wired'
 
       Failing Scenarios:
       cucumber features/wired.feature:2
@@ -84,7 +84,7 @@ Feature: Wire protocol table diffing
       (::) failed steps (::)
 
       I wanted things to be different for us (Cucumber::Wire::Exception)
-      features/wired.feature:3:in `Given we're all wired'
+      features/wired.feature:3:in `we're all wired'
 
       Failing Scenarios:
       cucumber features/wired.feature:2
@@ -113,7 +113,7 @@ Feature: Wire protocol table diffing
 
         | (-) a | (+) b |
        (Cucumber::MultilineArgument::DataTable::Different)
-      features/wired.feature:3:in `Given we're all wired'
+      features/wired.feature:3:in `we're all wired'
 
       Failing Scenarios:
       cucumber features/wired.feature:2

@@ -1,6 +1,6 @@
 # coding: utf-8
 require 'cucumber/wire/request_handler'
-require 'cucumber/step_argument'
+require 'cucumber/wire/step_argument'
 
 module Cucumber
   module Wire
@@ -26,7 +26,7 @@ module Cucumber
           private
 
           def create_step_match(raw_step_match)
-            step_definition = StepDefinition.new(@connection, raw_step_match)
+            step_definition = StepDefinition.new(@connection, raw_step_match, @registry)
             step_args = raw_step_match['args'].map do |raw_arg|
               StepArgument.new(raw_arg['pos'], raw_arg['val'])
             end
