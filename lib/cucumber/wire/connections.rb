@@ -16,10 +16,11 @@ module Cucumber
       attr_reader :connections
       private :connections
 
-      def initialize(connections, configuration)
+      def initialize(connections, configuration, registry)
         raise ArgumentError unless connections
         @connections = connections
         @configuration = configuration
+        @registry = registry
       end
 
       def find_match(test_step)
@@ -30,7 +31,7 @@ module Cucumber
       end
 
       def step_matches(step_name)
-        connections.map{ |c| c.step_matches(step_name)}.flatten
+        connections.map{ |c| c.step_matches(step_name, @registry)}.flatten
       end
 
       def begin_scenario(test_case)

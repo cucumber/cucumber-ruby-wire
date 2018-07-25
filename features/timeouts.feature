@@ -52,7 +52,7 @@ Feature: Wire protocol timeouts
         Scenario: Wired
           Given we're all wired
             Timed out calling wire server with message 'invoke' (Timeout::Error)
-            features/wired.feature:3:in `Given we're all wired'
+            features/wired.feature:3:in `we're all wired'
 
       Failing Scenarios:
       cucumber features/wired.feature:2

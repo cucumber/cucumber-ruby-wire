@@ -3,8 +3,8 @@ require 'cucumber/wire/protocol/requests'
 module Cucumber
   module Wire
     module Protocol
-      def step_matches(name_to_match)
-        handler = Requests::StepMatches.new(self)
+      def step_matches(name_to_match, registry)
+        handler = Requests::StepMatches.new(self, registry)
         handler.execute(name_to_match)
       end
 

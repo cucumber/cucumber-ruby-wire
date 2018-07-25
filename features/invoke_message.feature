@@ -47,8 +47,6 @@ Feature: Invoke message
 
         Scenario: Wired
           Given we're all wired
-            I'll do it later (Cucumber::Pending)
-            features/wired.feature:3:in `Given we're all wired'
 
       1 scenario (1 pending)
       1 step (1 pending)
@@ -102,7 +100,7 @@ Feature: Invoke message
       (::) failed steps (::)
 
       The wires are down (Some.Foreign.ExceptionType from localhost:54321)
-      features/wired.feature:3:in `Given we're all wired'
+      features/wired.feature:3:in `we're all wired'
 
       Failing Scenarios:
       cucumber features/wired.feature:2 # Scenario: Wired

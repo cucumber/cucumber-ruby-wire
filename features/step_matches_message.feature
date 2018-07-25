@@ -70,7 +70,7 @@ Feature: Step matches message
       """
       -
 
-      we.*   # MyApp.MyClass:123
+      "we.*"   # MyApp.MyClass:123
 
       1 scenario (1 skipped)
       1 step (1 skipped)

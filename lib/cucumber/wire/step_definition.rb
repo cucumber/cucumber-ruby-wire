@@ -1,15 +1,17 @@
-require 'cucumber/core/ast/location'
+require 'cucumber/core/test/location'
 
 module Cucumber
   module Wire
     class StepDefinition
-      attr_reader :regexp_source, :location
+      attr_reader :regexp_source, :location, :registry, :expression
 
-      def initialize(connection, data)
+      def initialize(connection, data, registry)
         @connection = connection
+        @registry   = registry
         @id              = data['id']
         @regexp_source   = data['regexp'] || "Unknown"
-        @location        = Core::Ast::Location.from_file_colon_line(data['source'] || "unknown:0")
+        @expression      = registry.create_expression(@regexp_source)
+        @location        = Core::Test::Location.from_file_colon_line(data['source'] || "unknown:0")
       end
 
       def invoke(args)
