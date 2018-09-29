@@ -10,9 +10,17 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ----
 
-## [In Git (targeting 1.0.0)](https://github.com/cucumber/cucumber-ruby-wire/compare/v0.0.1...master)
+## [In Git](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.0.0...master)
 
 ### Removed
+
+### Added
+
+### Changed
+
+### Fixed
+
+## [1.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v0.0.1...v1.0.0)
 
 ### Added
 
@@ -22,10 +30,6 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 * Changes to work with a modern Cucumber-Ruby ([#14](https://github.com/cucumber/cucumber-ruby-wire/pull/14) [brasmusson](https://github.com/brasmusson))
 * Adapt to the move of Location to Cucumber::Core::Test ([#14](https://github.com/cucumber/cucumber-ruby-wire/pull/14) [brasmusson](https://github.com/brasmusson))
-
-### Fixed
-
-<!-- Releases -->
 
 <!-- Contributors -->
 [brasmusson]:   https://github.com/brasmusson
