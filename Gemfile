@@ -1,20 +1,18 @@
+source "https://rubygems.org"
+
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
 gemspec
 
-source "https://rubygems.org"
-unless ENV['CUCUMBER_USE_RELEASED_GEMS']
-  # cucumber gem
-  cucumber_path = File.expand_path("../../cucumber-ruby", __FILE__)
-  if File.exist?(cucumber_path) && !ENV['CUCUMBER_USE_GIT']
-    gem "cucumber", path: cucumber_path
-  else
-    gem "cucumber", :git => "git://github.com/cucumber/cucumber-ruby.git"
-  end
-
-  # cucumber-core gem
-  core_path = File.expand_path("../../cucumber-ruby-core", __FILE__)
-  if File.exist?(core_path) && !ENV['CUCUMBER_USE_GIT_CORE']
-    gem "cucumber-core", path: core_path
-  else
-    gem 'cucumber-core', :git => "git://github.com/cucumber/cucumber-ruby-core.git"
-  end
+if ENV['CUCUMBER_RUBY_CORE']
+  gem 'cucumber-core', path: ENV['CUCUMBER_RUBY_CORE']
+elsif !ENV['CUCUMBER_USE_RELEASED_GEMS']
+  gem 'cucumber-core', github: 'cucumber/cucumber-ruby-core'
 end
+
+if ENV['CUCUMBER_RUBY']
+  gem 'cucumber', path: ENV['CUCUMBER_RUBY']
+elsif !ENV['CUCUMBER_USE_RELEASED_GEMS']
+  gem 'cucumber', github: 'cucumber/cucumber-ruby'
+end
+
