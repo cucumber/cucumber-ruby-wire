@@ -10,7 +10,7 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ----
 
-## [In Git](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.0.0...master)
+## [In Git](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.1.0...master)
 
 ### Removed
 
@@ -19,6 +19,13 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 ### Changed
 
 ### Fixed
+
+## [1.1.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.0.0...v1.1.0)
+
+### Changed
+
+* Update to cucumber-expressions 7.0.0
+* Update to cucumber 4.0.0
 
 ## [1.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v0.0.1...v1.0.0)
 
