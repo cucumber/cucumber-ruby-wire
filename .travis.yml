@@ -1,22 +1,22 @@
-rvm:
-  - ruby-head
-  - 2.4.0
-  - 2.3.3
-  - 2.2
+language: ruby
+sudo: false
 
 matrix:
+  include:
+    - rvm: ruby-head
+    - rvm: 2.6
+    - rvm: 2.5
+    - rvm: 2.4
+    - rvm: 2.3
+    - rvm: jruby-9.2.6.0
+      env: JRUBY_OPTS="--debug" LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8
   allow_failures:
     - rvm: ruby-head
+    - rvm: jruby-9.2.6.0
+
   fast_finish: true
 
 # whitelist
 branches:
   only:
     - master
-
-notifications:
-  email:
-    - cukes-devs@googlegroups.com
-  webhooks:
-    urls: # gitter
-      - https://webhooks.gitter.im/e/dc010332f9d40fcc21c4
