@@ -17,6 +17,7 @@ module Cucumber
         connections = Connections.new(wire_files.map { |f| create_connection(f) }, config, registry)
         config.filters << Filters::ActivateSteps.new(StepMatchSearch.new(connections.method(:step_matches), @config), @config)
         config.filters << AddHooksFilter.new(connections) unless @config.dry_run?
+        config.snippet_generators.clear
         config.register_snippet_generator Snippet::Generator.new(connections)
       end
 
