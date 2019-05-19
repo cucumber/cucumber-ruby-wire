@@ -1,6 +1,7 @@
 # coding: utf-8
 require 'cucumber/wire/request_handler'
 require 'cucumber/wire/step_argument'
+require 'cucumber/core/test/invoke_result'
 
 module Cucumber
   module Wire
@@ -64,6 +65,17 @@ module Cucumber
             super(request_params)
           end
 
+          def handle_fail(params)
+            # Raise it to get the stacktrace
+            raise @connection.exception(params)
+          rescue Exception => exception
+            Cucumber::Core::Test::FailedInvokeResult.new(exception, embeddings(params))
+          end
+
+          def handle_success(params)
+            Cucumber::Core::Test::PassedInvokeResult.new(embeddings(params))
+          end
+
           def handle_pending(message)
             raise Pending, message || "TODO"
           end
@@ -89,6 +101,11 @@ module Cucumber
 
           def table(data)
             Cucumber::MultilineArgument.from_core(Core::Test::DataTable.new(data))
+          end
+
+          def embeddings(params)
+            return [] if params.nil?
+            return params['embeddings'] || []
           end
         end
 
