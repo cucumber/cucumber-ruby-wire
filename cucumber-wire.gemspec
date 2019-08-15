@@ -16,10 +16,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'cucumber-core', '~> 5.0', '>= 5.0.0'
   s.add_dependency 'cucumber-expressions', '~> 8.0', '>= 8.0.0'
 
-  s.add_development_dependency 'cucumber', '~> 4.0'
-  s.add_development_dependency 'rake',      '~> 12.0'
-  s.add_development_dependency 'rspec',     '~> 3.5'
-  s.add_development_dependency 'aruba',     '~> 0.14'
+  s.add_development_dependency 'cucumber', '~> 3.1', '>= 3.1.2'
+  s.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
+  s.add_development_dependency 'rspec', '~> 3.8', '>= 3.8.0'
+  s.add_development_dependency 'aruba', '~> 0.14', '>= 0.14.11'
 
   s.rubygems_version = '>= 1.6.1'
   s.test_files            = Dir[
