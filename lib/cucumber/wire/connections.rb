@@ -26,7 +26,7 @@ module Cucumber
       def find_match(test_step)
         matches = step_matches(test_step.name)
         return unless matches.any?
-        # TODO: handle ambiguous matches (push to cucumber?)
+        # TODO: handle ambiguous matches (push to cucumber?)
         matches.first
       end
 
