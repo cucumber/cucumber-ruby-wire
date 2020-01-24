@@ -13,6 +13,6 @@ end
 if ENV['CUCUMBER_RUBY']
   gem 'cucumber', path: ENV['CUCUMBER_RUBY']
 elsif !ENV['CUCUMBER_USE_RELEASED_GEMS']
-  gem 'cucumber', github: 'cucumber/cucumber-ruby'
+  gem 'cucumber', github: 'cucumber/cucumber-ruby', branch: 'fix-cucumber-wire-failing-tests'
 end
 
