@@ -69,10 +69,8 @@ module Cucumber
           end
 
           def handle_diff!(tables)
-            # TODO: figure out if / how we could get a location for a table from the wire (or make a null location)
-            location = Core::Test::Location.new(__FILE__, __LINE__)
-            table1 = table(tables[0], location)
-            table2 = table(tables[1], location)
+            table1 = table(tables[0])
+            table2 = table(tables[1])
             table1.diff!(table2)
           end
 
@@ -89,8 +87,8 @@ module Cucumber
 
           private
 
-          def table(data, location)
-            Cucumber::MultilineArgument.from_core(Core::Test::DataTable.new(data, location))
+          def table(data)
+            Cucumber::MultilineArgument.from_core(Core::Test::DataTable.new(data))
           end
         end
 

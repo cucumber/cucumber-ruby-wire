@@ -16,21 +16,21 @@ Feature: Wire protocol timeouts
   Scenario: Try to talk to a server that's not there
     Given a file named "features/step_definitions/some_remote_place.wire" with:
       """
-      host: localhost
+      host: 127.0.0.1
       port: 54321
 
       """
     When I run `cucumber -f progress`
     Then the stderr should contain:
       """
-      Unable to contact the wire server at localhost:54321
+      Unable to contact the wire server at 127.0.0.1:54321
       """
 
   @spawn
   Scenario: Invoke a step definition that takes longer than its timeout
     Given a file named "features/step_definitions/some_remote_place.wire" with:
       """
-      host: localhost
+      host: 127.0.0.1
       port: 54321
       timeout:
         invoke: 0.1
