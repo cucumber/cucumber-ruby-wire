@@ -12,13 +12,22 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.2.0...master)
 
-## Added
+### Added
 
-## Changed
+* N/A
 
-## Removed
+### Changed
 
-## Improved
+* N/A
+
+### Removed
+
+* N/A
+
+### Improved
+
+* N/A
+
 
 ## [1.2.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.1.0...v1.2.0)
 
