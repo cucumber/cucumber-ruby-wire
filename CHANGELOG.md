@@ -10,6 +10,16 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ----
 
+## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.2.0...master)
+
+## Added
+
+## Changed
+
+## Removed
+
+## Improved
+
 ## [1.2.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.1.0...v1.2.0)
 
 ### Removed
@@ -18,7 +28,7 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Added
 
-* Use `Cucumber:Messages::IdGenerator::UUID` to provide ids for `Hooks
+* Use `Cucumber:Messages::IdGenerator::UUID` to provide ids for `Hooks`
 
 
 ## [1.1.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.0.0...v1.1.0)
