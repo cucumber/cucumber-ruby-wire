@@ -10,7 +10,7 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ----
 
-## [In Git](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.1.0...master)
+## [1.2.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.1.0...v1.2.0)
 
 ### Removed
 
