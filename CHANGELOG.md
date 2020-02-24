@@ -14,11 +14,12 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Removed
 
+* Multiline arguments do not need `Location` anymore
+
 ### Added
 
-### Changed
+* Use `Cucumber:Messages::IdGenerator::UUID` to provide ids for `Hooks
 
-### Fixed
 
 ## [1.1.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.0.0...v1.1.0)
 
