@@ -1,4 +1,4 @@
-require 'multi_json'
+require 'json'
 require 'socket'
 require 'cucumber/wire/connection'
 require 'cucumber/wire/configuration'
