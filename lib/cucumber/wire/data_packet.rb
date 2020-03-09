@@ -1,4 +1,4 @@
-require 'multi_json'
+require 'json'
 
 module Cucumber
   module Wire
@@ -7,7 +7,7 @@ module Cucumber
     class DataPacket
       class << self
         def parse(raw)
-          attributes = MultiJson.load(raw.strip)
+          attributes = JSON.parse(raw.strip)
           message = attributes[0]
           params  = attributes[1]
           new(message, params)
@@ -23,7 +23,7 @@ module Cucumber
       def to_json
         packet = [@message]
         packet << @params if @params
-        MultiJson.dump(packet)
+        JSON.generate(packet)
       end
 
       def handle_with(handler)
