@@ -10,24 +10,11 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ----
 
-## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v2.0.0...master)
-
-### Added
-
-* N/A
-
-### Changed
-
-* N/A
+## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v2.0.0...v2.0.1)
 
 ### Removed
 
-* N/A
-
-### Improved
-
-* N/A
-
+* Replace use of `MultiJSON` to use native JSON gem
 
 ## [2.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v1.2.0...v2.0.0)
 
