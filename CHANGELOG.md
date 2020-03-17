@@ -28,7 +28,7 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 * N/A
 
-## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v2.0.0...v2.0.1)
+## [2.0.1](https://github.com/cucumber/cucumber-ruby-wire/compare/v2.0.0...v2.0.1)
 
 ### Removed
 
