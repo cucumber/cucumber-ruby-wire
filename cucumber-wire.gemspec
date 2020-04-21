@@ -3,7 +3,7 @@ $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'cucumber-wire'
-  s.version     = File.read(File.dirname(__FILE__) + '/lib/cucumber/wire/version')
+  s.version     = File.read(File.dirname(__FILE__) + '/lib/cucumber/wire/version').strip
   s.authors     = ['Matt Wynne']
   s.description = 'Wire protocol for Cucumber'
   s.summary     = "cucumber-wire-#{s.version}"
@@ -14,7 +14,8 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.3'
 
   s.add_dependency 'cucumber-core', '~> 6.0', '>= 6.0.0'
-  s.add_dependency 'cucumber-expressions', '~> 8.0', '>= 8.0.2'
+  s.add_dependency 'cucumber-cucumber-expressions', '~> 10.1', '>= 10.1.0'
+  s.add_dependency 'cucumber-messages', '~> 12.1', '>= 12.1.1'
 
   s.add_development_dependency 'cucumber', '~> 3.1', '>= 3.1.2'
   s.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
