@@ -10,25 +10,15 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ----
 
-## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v2.0.1...master)
-
-### Added
-
-* N/A
+## [3.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v2.0.1...v3.0.0)
 
 ### Changed
+
+* Use `cucumber-ruby-core` 7.0.0
 
 * Updated monorepo libraries:
   * cucumber-cucumber-expressions ~> 10
   * cucumber-messages ~> 12
-
-### Removed
-
-* N/A
-
-### Improved
-
-* N/A
 
 ## [2.0.1](https://github.com/cucumber/cucumber-ruby-wire/compare/v2.0.0...v2.0.1)
 

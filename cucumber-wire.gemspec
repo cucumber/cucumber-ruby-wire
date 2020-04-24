@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.required_ruby_version = '>= 2.3'
 
-  s.add_dependency 'cucumber-core', '~> 6.0', '>= 6.0.0'
+  s.add_dependency 'cucumber-core', '~> 7.0', '>= 7.0.0'
   s.add_dependency 'cucumber-cucumber-expressions', '~> 10.1', '>= 10.1.0'
   s.add_dependency 'cucumber-messages', '~> 12.1', '>= 12.1.1'
 
