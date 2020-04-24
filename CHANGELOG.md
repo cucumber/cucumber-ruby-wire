@@ -18,7 +18,9 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Changed
 
-* N/A
+* Updated monorepo libraries:
+  * cucumber-cucumber-expressions ~> 10
+  * cucumber-messages ~> 12
 
 ### Removed
 
