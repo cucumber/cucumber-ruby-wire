@@ -10,25 +10,13 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ----
 
-## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v3.0.0...master)
-
-### Added
-
-* N/A
+## [3.1.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v3.0.0...v3.1.0)
 
 ### Changed
 
 * Updated gems:
   * `cucumber-core` ~> 7.1.0
   * `cucumber-messages` ~> 12.2.0
-
-### Removed
-
-* N/A
-
-### Improved
-
-* N/A
 
 ## [3.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v2.0.1...v3.0.0)
 
