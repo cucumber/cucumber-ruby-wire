@@ -18,7 +18,8 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Changed
 
-* N/A
+* Updated gems:
+  * `cucumber-messages` ~> 12.2.0
 
 ### Removed
 

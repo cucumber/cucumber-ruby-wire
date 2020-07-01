@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'cucumber-core', '~> 7.0', '>= 7.0.0'
   s.add_dependency 'cucumber-cucumber-expressions', '~> 10.1', '>= 10.1.0'
-  s.add_dependency 'cucumber-messages', '~> 12.1', '>= 12.1.1'
+  s.add_dependency 'cucumber-messages', '~> 12.2', '>= 12.2.0'
 
   s.add_development_dependency 'cucumber', '~> 3.1', '>= 3.1.2'
   s.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
