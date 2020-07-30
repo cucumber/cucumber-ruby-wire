@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.3'
 
   s.add_dependency 'cucumber-core', '~> 7.1', '>= 7.1.0'
-  s.add_dependency 'cucumber-cucumber-expressions', '~> 10.1', '>= 10.1.0'
-  s.add_dependency 'cucumber-messages', '~> 12.2', '>= 12.2.0'
+  s.add_dependency 'cucumber-cucumber-expressions', '~> 10.2', '>= 10.2.2'
+  s.add_dependency 'cucumber-messages', '~> 12.3', '>= 12.3.2'
 
   s.add_development_dependency 'cucumber', '~> 4.0', '>= 4.0.1'
   s.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
