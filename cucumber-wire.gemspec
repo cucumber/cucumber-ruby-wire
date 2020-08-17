@@ -14,13 +14,13 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.3'
 
   s.add_dependency 'cucumber-core', '~> 7.1', '>= 7.1.0'
-  s.add_dependency 'cucumber-cucumber-expressions', '~> 10.2', '>= 10.2.2'
-  s.add_dependency 'cucumber-messages', '~> 12.3', '>= 12.3.2'
+  s.add_dependency 'cucumber-cucumber-expressions', '~> 10.3', '>= 10.3.0'
+  s.add_dependency 'cucumber-messages', '~> 13.0', '>= 13.0.1'
 
-  s.add_development_dependency 'cucumber', '~> 4.0', '>= 4.0.1'
-  s.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
-  s.add_development_dependency 'rspec', '~> 3.8', '>= 3.8.0'
-  s.add_development_dependency 'aruba', '~> 0.14', '>= 0.14.11'
+  s.add_development_dependency 'cucumber', '~> 4.1', '>= 4.1.0'
+  s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.1'
+  s.add_development_dependency 'rspec', '~> 3.9', '>= 3.9.0'
+  s.add_development_dependency 'aruba', '~> 1.0', '>= 1.0.2'
 
   s.rubygems_version = '>= 1.6.1'
   s.test_files            = Dir[

@@ -26,7 +26,7 @@ Feature: Snippets message
       | ["snippet_text",{"step_keyword":"Given","multiline_arg_class":"","step_name":"we're all wired"}] | ["success","foo()\n\tbar;\nbaz"] |
       | ["begin_scenario"]                                                                               | ["success"]                      |
       | ["end_scenario"]                                                                                 | ["success"]                      |
-    When I run `cucumber -f pretty`
+    When I run `cucumber -f pretty --publish-quiet`
     Then the stderr should not contain anything
     And it should pass with:
       """

@@ -91,7 +91,7 @@ Feature: Invoke message
       | ["begin_scenario"]                                   | ["success"]                                                                         |
       | ["invoke",{"id":"1","args":[]}]                      | ["fail",{"message":"The wires are down", "exception":"Some.Foreign.ExceptionType"}] |
       | ["end_scenario"]                                     | ["success"]                                                                         |
-    When I run `cucumber -f progress`
+    When I run `cucumber -f progress --publish-quiet`
     Then the stderr should not contain anything
     And it should fail with:
       """
@@ -131,7 +131,7 @@ Feature: Invoke message
       | ["begin_scenario"]                                   | ["success"]                                                  |
       | ["invoke",{"id":"1","args":["wired"]}]               | ["success"]                                                  |
       | ["end_scenario"]                                     | ["success"]                                                  |
-    When I run `cucumber -f progress`
+    When I run `cucumber -f progress --publish-quiet`
     Then the stderr should not contain anything
     And it should pass with:
       """
@@ -165,7 +165,7 @@ Feature: Invoke message
       | ["begin_scenario"]                                                    | ["success"]                                                 |
       | ["invoke",{"id":"1","args":["we're",[["wired"],["high"],["happy"]]]}] | ["success"]                                                 |
       | ["end_scenario"]                                                      | ["success"]                                                 |
-    When I run `cucumber -f progress features/wired_on_tables.feature`
+    When I run `cucumber -f progress --publish-quiet features/wired_on_tables.feature`
     Then the stderr should not contain anything
     And it should pass with:
       """
@@ -193,7 +193,7 @@ Feature: Invoke message
       | ["begin_scenario"]                                   | ["success"]                         |
       | ["invoke",{"id":"1","args":[]}]                      | ["success"]                         |
       | ["end_scenario"]                                     | ["success"]                         |
-    When I run `cucumber -f progress features/wired_in_an_outline.feature`
+    When I run `cucumber -f progress --publish-quiet features/wired_in_an_outline.feature`
     Then the stderr should not contain anything
     And it should pass with:
       """

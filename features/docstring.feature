@@ -27,7 +27,7 @@ Feature: Wire protocol docstrings
       | ["begin_scenario"]                                   | ["success"]                         |
       | ["invoke",{"id":"1","args":["to want more"]}]        | ["success"]                         |
       | ["end_scenario"]                                     | ["success"]                         |
-    When I run `cucumber -f progress`
+    When I run `cucumber -f progress --publish-quiet`
     Then the stderr should not contain anything
     And it should pass with:
       """
