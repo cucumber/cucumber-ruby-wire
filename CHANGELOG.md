@@ -14,22 +14,17 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Added
 
-* N/A
-
 ### Changed
 
-* Updated gems:
-  * `cucumber-messages` ~> 12.3.2
-  * `cucumber-expressions` ~> 10.2.2
-
+### Deprecated
 
 ### Removed
 
-* N/A
+### Fixed
 
-### Improved
+### Dependencies
 
-* N/A
+* Updated dependencies (look at the diff for details)
 
 ## [3.1.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v3.0.0...v3.1.0)
 
