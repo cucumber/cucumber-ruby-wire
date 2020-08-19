@@ -8,6 +8,6 @@ Release Process
 * Now release it:
 
 ```
-git commit -m "Release X.Y.Z"
+git commit -am "Release X.Y.Z"
 make release
 ```
