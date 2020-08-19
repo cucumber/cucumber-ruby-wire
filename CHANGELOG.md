@@ -10,7 +10,7 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ----
 
-## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v4.0.0...master)
+## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v4.0.1...master)
 
 ### Added
 
@@ -24,11 +24,15 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Dependencies
 
-## [4.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v3.1.0...v4.0.0)
+## [4.0.1](https://github.com/cucumber/cucumber-ruby-wire/compare/v4.0.0...v4.0.1)
 
 ### Dependencies
 
 * Updated dependencies (look at the diff for details)
+
+## [4.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v3.1.0...v4.0.0)
+
+* Release failed
 
 ## [3.1.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v3.0.0...v3.1.0)
 
