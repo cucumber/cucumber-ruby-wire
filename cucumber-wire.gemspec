@@ -1,5 +1,4 @@
-# -*- encoding: utf-8 -*-
-$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('lib', __dir__)
 
 Gem::Specification.new do |s|
   s.name        = 'cucumber-wire'
@@ -15,18 +14,18 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'cucumber-core', '~> 8.0', '>= 8.0.1'
   s.add_dependency 'cucumber-cucumber-expressions', '~> 10.3', '>= 10.3.0'
-  s.add_dependency 'cucumber-messages', '~> 13.0', '>= 13.0.1'
+  s.add_dependency 'cucumber-messages', '~> 14.0', '>= 14.0.1'
 
-  s.add_development_dependency 'cucumber', '~> 4.1', '>= 4.1.0'
-  s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.1'
-  s.add_development_dependency 'rspec', '~> 3.9', '>= 3.9.0'
-  s.add_development_dependency 'aruba', '~> 1.0', '>= 1.0.2'
+  s.add_development_dependency 'aruba', '~> 1.0', '>= 1.0.4'
+  s.add_development_dependency 'cucumber', '~> 5.3', '>= 5.3.0'
+  s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.3'
+  s.add_development_dependency 'rspec', '~> 3.10', '>= 3.10.0'
 
   s.rubygems_version = '>= 1.6.1'
-  s.test_files            = Dir[
+  s.test_files = Dir[
     'spec/**/*'
   ]
-  s.files            = Dir[
+  s.files = Dir[
     'CHANGELOG.md',
     'CONTRIBUTING.md',
     'README.md',
