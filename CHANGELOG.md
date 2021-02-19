@@ -24,6 +24,8 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Dependencies
 
+* Updated dependencies (look at the diff for details)
+
 ## [4.0.1](https://github.com/cucumber/cucumber-ruby-wire/compare/v4.0.0...v4.0.1)
 
 ### Dependencies
