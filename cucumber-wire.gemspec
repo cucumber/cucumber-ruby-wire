@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.3'
 
   s.add_dependency 'cucumber-core', '~> 8.0', '>= 8.0.1'
-  s.add_dependency 'cucumber-cucumber-expressions', '~> 12.0', '>= 12.0.0'
+  s.add_dependency 'cucumber-cucumber-expressions', '~> 12.1', '>= 12.1.0'
   s.add_dependency 'cucumber-messages', '~> 15.0', '>= 15.0.0'
 
   s.add_development_dependency 'aruba', '~> 1.0', '>= 1.0.4'
