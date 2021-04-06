@@ -4,15 +4,28 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
 
-if ENV['CUCUMBER_RUBY_CORE']
-  gem 'cucumber-core', path: ENV['CUCUMBER_RUBY_CORE']
-elsif !ENV['CUCUMBER_USE_RELEASED_GEMS']
-  gem 'cucumber-core', github: 'cucumber/cucumber-ruby-core'
+def monorepo(name)
+  path = "../../cucumber/#{name}/ruby"
+  if File.directory?(path)
+    { path: File.expand_path(path) }
+  else
+    { git: "https://github.com/cucumber/cucumber.git", glob: "#{name}/ruby/cucumber-#{name}.gemspec" }
+  end
 end
 
-if ENV['CUCUMBER_RUBY']
-  gem 'cucumber', path: ENV['CUCUMBER_RUBY']
-elsif !ENV['CUCUMBER_USE_RELEASED_GEMS']
-  gem 'cucumber', github: 'cucumber/cucumber-ruby'
+def sibling(name)
+  path = "../#{name}"
+  if File.directory?(path)
+    { path: File.expand_path(path) }
+  else
+    # Sibling dependencies must use the same branch
+    branch = ENV['CIRCLE_BRANCH']
+    { git: "https://github.com/cucumber/#{name}.git", branch: branch }
+  end
 end
 
+gem 'cucumber', sibling('cucumber-ruby')
+gem 'cucumber-core', sibling('cucumber-ruby-core')
+gem 'cucumber-cucumber-expressions', monorepo('cucumber-expressions')
+gem 'cucumber-html-formatter', monorepo('html-formatter')
+gem 'cucumber-messages', monorepo('messages')
