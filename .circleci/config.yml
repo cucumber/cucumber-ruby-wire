@@ -50,7 +50,6 @@ jobs:
       - build
       - test
 
-jobs:
   build-ruby-2_5-released-gems:
     docker:
       - image: circleci/ruby:2.5
@@ -103,12 +102,14 @@ workflows:
 
     jobs:
       - build-ruby-2_5
+      - build-ruby-2_5-released-gems
       - build-ruby-2_6
       - build-ruby-2_7
 
   build:
     jobs:
       - build-ruby-2_5
+      - build-ruby-2_5-released-gems
       - build-ruby-2_6
       - build-ruby-2_7
       - build-ruby-latest
