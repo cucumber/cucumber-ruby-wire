@@ -14,7 +14,7 @@ Feature: Wire protocol table diffing
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
-      host: localhost
+      host: 127.0.0.1
       port: 54321
 
       """
@@ -28,7 +28,7 @@ Feature: Wire protocol table diffing
       | ["invoke",{"id":"1","args":[]}]                      | ["diff",[[["a","b"],["c","d"]],[["x","y"],["z","z"]]]]                                               |
       | ["diff_failed"]                                      | ["fail",{"message":"Not same", "exception":"DifferentException", "backtrace":["a.cs:12","b.cs:34"]}] |
       | ["end_scenario"]                                     | ["success"]                                                                                          |
-    When I run `cucumber -f progress --backtrace -q`
+    When I run "cucumber -f progress --backtrace -q"
     Then the stderr should not contain anything
     And it should fail with exactly:
       """
@@ -36,7 +36,7 @@ Feature: Wire protocol table diffing
 
       (::) failed steps (::)
 
-      Not same (DifferentException from localhost:54321)
+      Not same (DifferentException from 127.0.0.1:54321)
       a.cs:12
       b.cs:34
       features/wired.feature:3:in `we're all wired'
@@ -57,7 +57,7 @@ Feature: Wire protocol table diffing
       | ["invoke",{"id":"1","args":[]}]                      | ["diff",[[["a"],["b"]],[["a"],["b"]]]] |
       | ["diff_ok"]                                          | ["success"]                            |
       | ["end_scenario"]                                     | ["success"]                            |
-    When I run `cucumber -f progress -q`
+    When I run "cucumber -f progress -q"
     Then it should pass with exactly:
       """
       .
@@ -76,7 +76,7 @@ Feature: Wire protocol table diffing
       | ["invoke",{"id":"1","args":[]}]                      | ["diff",[[["a"],["b"]],[["a"],["b"]]]]                        |
       | ["diff_ok"]                                          | ["fail",{"message":"I wanted things to be different for us"}] |
       | ["end_scenario"]                                     | ["success"]                                                   |
-    When I run `cucumber -f progress -q`
+    When I run "cucumber -f progress -q"
     Then it should fail with exactly:
       """
       F
@@ -102,7 +102,7 @@ Feature: Wire protocol table diffing
       | ["begin_scenario"]                                   | ["success"]                         |
       | ["invoke",{"id":"1","args":[]}]                      | ["diff!",[[["a"]],[["b"]]]]         |
       | ["end_scenario"]                                     | ["success"]                         |
-    When I run `cucumber -f progress -q`
+    When I run "cucumber -f progress -q"
     And it should fail with exactly:
       """
       F

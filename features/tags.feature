@@ -6,7 +6,7 @@ Feature: Wire protocol tags
   Background:
     Given a file named "features/step_definitions/some_remote_place.wire" with:
       """
-      host: localhost
+      host: 127.0.0.1
       port: 54321
 
       """
@@ -28,7 +28,7 @@ Feature: Wire protocol tags
       | ["begin_scenario", {"tags":["bar","baz","foo"]}]     | ["success"]                         |
       | ["invoke",{"id":"1","args":[]}]                      | ["success"]                         |
       | ["end_scenario", {"tags":["bar","baz","foo"]}]       | ["success"]                         |
-    When I run `cucumber -f pretty -q`
+    When I run "cucumber -f pretty -q"
     Then the stderr should not contain anything
     And it should pass with:
       """
@@ -65,7 +65,7 @@ Feature: Wire protocol tags
     | ["begin_scenario", {"tags":["bar","baz","foo"]}]     | ["success"]                         |
     | ["invoke",{"id":"1","args":[]}]                      | ["success"]                         |
     | ["end_scenario", {"tags":["bar","baz","foo"]}]       | ["success"]                         |
-  When I run `cucumber -f pretty -q`
+  When I run "cucumber -f pretty -q"
   Then the stderr should not contain anything
   And it should pass with exactly:
     """

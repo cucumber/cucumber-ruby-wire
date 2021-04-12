@@ -24,7 +24,7 @@ Feature: Step matches message
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
-      host: localhost
+      host: 127.0.0.1
       port: 54321
 
       """
@@ -33,7 +33,7 @@ Feature: Step matches message
     Given there is a wire server running on port 54321 which understands the following protocol:
       | request                                              | response       |
       | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[]] |
-    When I run `cucumber --dry-run --no-snippets -f progress`
+    When I run "cucumber --dry-run --no-snippets -f progress"
     And it should pass with:
       """
       U
@@ -47,7 +47,7 @@ Feature: Step matches message
     Given there is a wire server running on port 54321 which understands the following protocol:
       | request                                              | response                            |
       | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[{"id":"1", "args":[]}]] |
-    When I run `cucumber --dry-run -f progress`
+    When I run "cucumber --dry-run -f progress"
     And it should pass with:
       """
       -
@@ -65,7 +65,7 @@ Feature: Step matches message
     Given there is a wire server running on port 54321 which understands the following protocol:
       | request                                              | response                                                                           |
       | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[{"id":"1", "args":[], "source":"MyApp.MyClass:123", "regexp":"we.*"}]] |
-    When I run `cucumber -f stepdefs --dry-run --publish-quiet`
+    When I run "cucumber -f stepdefs --dry-run --publish-quiet"
     Then it should pass with:
       """
       -

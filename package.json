@@ -1,0 +1,21 @@
+{
+  "name": "cucumber-ruby-wire-acceptance-tests",
+  "version": "1.0.0",
+  "description": "[![CircleCI](https://circleci.com/gh/cucumber/cucumber-ruby-wire.svg?style=svg)](https://circleci.com/gh/cucumber/cucumber-ruby-wire)",
+  "private": true,
+  "scripts": {
+    "test": "cucumber-js features"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cucumber/cucumber-ruby-wire.git"
+  },
+  "author": "cucumber",
+  "bugs": {
+    "url": "https://github.com/cucumber/cucumber-ruby-wire/issues"
+  },
+  "homepage": "https://github.com/cucumber/cucumber-ruby-wire#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.1.0"
+  }
+}

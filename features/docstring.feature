@@ -6,7 +6,7 @@ Feature: Wire protocol docstrings
   Background:
     Given a file named "features/step_definitions/some_remote_place.wire" with:
       """
-      host: localhost
+      host: 127.0.0.1
       port: 54321
 
       """
@@ -27,7 +27,7 @@ Feature: Wire protocol docstrings
       | ["begin_scenario"]                                   | ["success"]                         |
       | ["invoke",{"id":"1","args":["to want more"]}]        | ["success"]                         |
       | ["end_scenario"]                                     | ["success"]                         |
-    When I run `cucumber -f progress --publish-quiet`
+    When I run "cucumber -f progress --publish-quiet"
     Then the stderr should not contain anything
     And it should pass with:
       """

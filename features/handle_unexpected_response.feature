@@ -12,7 +12,7 @@ Feature: Handle unexpected response
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
-      host: localhost
+      host: 127.0.0.1
       port: 54321
 
       """
@@ -22,7 +22,7 @@ Feature: Handle unexpected response
       | request                                              | response                            |
       | ["begin_scenario"]                                   | ["yikes"]                           |
       | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[{"id":"1", "args":[]}]] |
-    When I run `cucumber -f pretty`
+    When I run "cucumber -f pretty"
     Then the output should contain:
       """
       undefined method `handle_yikes'

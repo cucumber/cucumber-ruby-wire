@@ -20,7 +20,7 @@ Feature: Wire protocol timeouts
       port: 54321
 
       """
-    When I run `cucumber -f progress`
+    When I run "cucumber -f progress"
     Then the stderr should contain:
       """
       Unable to contact the wire server at 127.0.0.1:54321
@@ -36,14 +36,14 @@ Feature: Wire protocol timeouts
         invoke: 0.1
 
       """
-    And there is a wire server on port 54321 which understands the following protocol:
+    And there is a wire server running on port 54321 which understands the following protocol:
       | request                                              | response                                                     |
       | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[{"id":"1", "args":[{"val":"wired", "pos":10}]}]] |
       | ["begin_scenario"]                                   | ["success"]                                                  |
       | ["invoke",{"id":"1","args":["wired"]}]               | ["success"]                                                  |
       | ["end_scenario"]                                     | ["success"]                                                  |
     And the wire server takes 0.2 seconds to respond to the invoke message
-    When I run `cucumber -f pretty -q`
+    When I run "cucumber -f pretty -q"
     Then the stderr should not contain anything
     And it should fail with exactly:
       """

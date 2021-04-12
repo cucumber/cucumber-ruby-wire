@@ -26,7 +26,7 @@ Feature: Invoke message
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
-      host: localhost
+      host: 127.0.0.1
       port: 54321
 
       """
@@ -40,7 +40,7 @@ Feature: Invoke message
       | ["begin_scenario"]                                   | ["success"]                         |
       | ["invoke",{"id":"1","args":[]}]                      | ["pending", "I'll do it later"]     |
       | ["end_scenario"]                                     | ["success"]                         |
-    When I run `cucumber -f pretty -q`
+    When I run "cucumber -f pretty -q"
     And it should pass with exactly:
       """
       Feature: High strung
@@ -60,7 +60,7 @@ Feature: Invoke message
       | ["begin_scenario"]                                   | ["success"]                         |
       | ["invoke",{"id":"1","args":[]}]                      | ["success"]                         |
       | ["end_scenario"]                                     | ["success"]                         |
-    When I run `cucumber -f progress`
+    When I run "cucumber -f progress"
     And it should pass with:
       """
       .
@@ -91,7 +91,7 @@ Feature: Invoke message
       | ["begin_scenario"]                                   | ["success"]                                                                         |
       | ["invoke",{"id":"1","args":[]}]                      | ["fail",{"message":"The wires are down", "exception":"Some.Foreign.ExceptionType"}] |
       | ["end_scenario"]                                     | ["success"]                                                                         |
-    When I run `cucumber -f progress --publish-quiet`
+    When I run "cucumber -f progress --publish-quiet"
     Then the stderr should not contain anything
     And it should fail with:
       """
@@ -99,7 +99,7 @@ Feature: Invoke message
 
       (::) failed steps (::)
 
-      The wires are down (Some.Foreign.ExceptionType from localhost:54321)
+      The wires are down (Some.Foreign.ExceptionType from 127.0.0.1:54321)
       features/wired.feature:3:in `we're all wired'
 
       Failing Scenarios:
@@ -131,7 +131,7 @@ Feature: Invoke message
       | ["begin_scenario"]                                   | ["success"]                                                  |
       | ["invoke",{"id":"1","args":["wired"]}]               | ["success"]                                                  |
       | ["end_scenario"]                                     | ["success"]                                                  |
-    When I run `cucumber -f progress --publish-quiet`
+    When I run "cucumber -f progress --publish-quiet"
     Then the stderr should not contain anything
     And it should pass with:
       """
@@ -165,7 +165,7 @@ Feature: Invoke message
       | ["begin_scenario"]                                                    | ["success"]                                                 |
       | ["invoke",{"id":"1","args":["we're",[["wired"],["high"],["happy"]]]}] | ["success"]                                                 |
       | ["end_scenario"]                                                      | ["success"]                                                 |
-    When I run `cucumber -f progress --publish-quiet features/wired_on_tables.feature`
+    When I run "cucumber -f progress --publish-quiet features/wired_on_tables.feature"
     Then the stderr should not contain anything
     And it should pass with:
       """
@@ -193,7 +193,7 @@ Feature: Invoke message
       | ["begin_scenario"]                                   | ["success"]                         |
       | ["invoke",{"id":"1","args":[]}]                      | ["success"]                         |
       | ["end_scenario"]                                     | ["success"]                         |
-    When I run `cucumber -f progress --publish-quiet features/wired_in_an_outline.feature`
+    When I run "cucumber -f progress --publish-quiet features/wired_in_an_outline.feature"
     Then the stderr should not contain anything
     And it should pass with:
       """

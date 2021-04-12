@@ -16,13 +16,13 @@ Feature: ERB configuration
   Scenario: ERB is used in the wire file which references an environment variable that is not set
       Given a file named "features/step_definitions/server.wire" with:
         """
-        host: localhost
+        host: 127.0.0.1
         port: <%= ENV['PORT'] || 12345 %>
         """
       And there is a wire server running on port 12345 which understands the following protocol:
         | request                                              | response       |
         | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[]] |
-      When I run `cucumber --dry-run --no-snippets -f progress`
+      When I run "cucumber --dry-run --no-snippets -f progress"
       Then it should pass with:
         """
         U
@@ -37,13 +37,13 @@ Feature: ERB configuration
       Given I have environment variable PORT set to "16816"
       And a file named "features/step_definitions/server.wire" with:
         """
-        host: localhost
+        host: 127.0.0.1
         port: <%= ENV['PORT'] || 12345 %>
         """
       And there is a wire server running on port 16816 which understands the following protocol:
         | request                                              | response       |
         | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[]] |
-      When I run `cucumber --dry-run --no-snippets -f progress --publish-quiet`
+      When I run "cucumber --dry-run --no-snippets -f progress --publish-quiet"
       Then it should pass with:
         """
         U
