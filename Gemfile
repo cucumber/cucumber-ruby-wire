@@ -16,3 +16,4 @@ elsif !ENV['CUCUMBER_USE_RELEASED_GEMS']
   gem 'cucumber', github: 'cucumber/cucumber-ruby'
 end
 
+gem 'aruba', git: 'https://github.com/cucumber/aruba.git', branch: 'allow-new-cucumbers'
