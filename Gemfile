@@ -26,8 +26,12 @@ def sibling(name)
   end
 end
 
-gem 'cucumber', sibling('cucumber-ruby')
 gem 'cucumber-core', sibling('cucumber-ruby-core')
 gem 'cucumber-cucumber-expressions', monorepo('cucumber-expressions')
 gem 'cucumber-html-formatter', monorepo('html-formatter')
 gem 'cucumber-messages', monorepo('messages')
+
+gem 'aruba'
+gem 'cucumber', sibling('cucumber-ruby')
+gem 'rake'
+gem 'rspec'
