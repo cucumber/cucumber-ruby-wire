@@ -26,6 +26,11 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ## [5.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v4.0.1...v5.0.0)
 
+### Changed
+
+- Update of cucumber-expressions may have little impact on how step regexp
+  and expressions are recognized
+
 ### Dependencies
 
 - Updated dependencies (look at the diff for details)
