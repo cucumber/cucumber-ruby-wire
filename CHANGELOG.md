@@ -28,8 +28,9 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Changed
 
-- Update of cucumber-expressions may have little impact on how step regexp
-  and expressions are recognized
+- Update from cucumber-expressions 10 to 12 introduces significant underlying changes
+  in how step definitions are matched. This should be backward compatible but there
+  is a risk of regressions.
 
 ### Dependencies
 
