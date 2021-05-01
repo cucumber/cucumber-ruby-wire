@@ -87,7 +87,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
 
     jobs:
       - build-ruby-2_5
