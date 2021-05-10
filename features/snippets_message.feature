@@ -23,7 +23,7 @@ Feature: Snippets message
     Given there is a wire server running on port 54321 which understands the following protocol:
       | request                                                                                          | response                         |
       | ["step_matches",{"name_to_match":"we're all wired"}]                                             | ["success",[]]                   |
-      | ["snippet_text",{"step_keyword":"Given","multiline_arg_class":"","step_name":"we're all wired"}] | ["success","foo()\n\tbar;\nbaz"] |
+      | ["snippet_text",{"step_keyword":"Given","multiline_arg_class":"","step_name":"we're all wired"}] | ["success","foo()\n  bar;\nbaz"] |
       | ["begin_scenario"]                                                                               | ["success"]                      |
       | ["end_scenario"]                                                                                 | ["success"]                      |
     When I run `cucumber -f pretty --publish-quiet`
@@ -41,7 +41,7 @@ Feature: Snippets message
     And the output should contain:
       """
       foo()
-      \tbar;
+        bar;
       baz
 
       """
