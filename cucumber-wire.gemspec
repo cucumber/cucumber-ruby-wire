@@ -12,12 +12,12 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.required_ruby_version = '>= 2.3'
 
-  s.add_dependency 'cucumber-core', '~> 9.0', '>= 9.0.0'
+  s.add_dependency 'cucumber-core', '~> 9.0', '>= 9.0.1'
   s.add_dependency 'cucumber-cucumber-expressions', '~> 12.1', '>= 12.1.1'
   s.add_dependency 'cucumber-messages', '~> 15.0', '>= 15.0.0'
 
-  s.add_development_dependency 'aruba', '~> 1.1', '>= 1.1.0'
-  s.add_development_dependency 'cucumber', '~> 5.3', '>= 5.3.0'
+  s.add_development_dependency 'aruba', '~> 1.1', '>= 1.1.1'
+  s.add_development_dependency 'cucumber', '~> 6.0', '>= 6.0.0'
   s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.3'
   s.add_development_dependency 'rspec', '~> 3.10', '>= 3.10.0'
 

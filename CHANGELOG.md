@@ -10,7 +10,7 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ---
 
-## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v5.0.0...main)
+## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v5.0.1...main)
 
 ### Added
 
@@ -23,6 +23,12 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 ### Fixed
 
 ### Dependencies
+
+## [5.0.1](https://github.com/cucumber/cucumber-ruby-wire/compare/v5.0.0...v5.0.1)
+
+### Dependencies
+
+- Updated `cucumber-core` ~> 9.0.1
 
 ## [5.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v4.0.1...v5.0.0)
 
