@@ -16,6 +16,10 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Changed
 
+- Updated `cucumber-core` ~> 9.0.1 and `cucumber-messages` ~> 17.0.
+  This brings breaking changes because of internal changes in Cucumber::Messages.
+  ([#44](https://github.com/cucumber/cucumber-ruby-wire/pull/44))
+
 ### Deprecated
 
 ### Removed
