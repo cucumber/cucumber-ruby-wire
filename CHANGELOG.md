@@ -10,15 +10,11 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ---
 
-## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v5.0.1...main)
+## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.0...main)
 
 ### Added
 
 ### Changed
-
-- Updated `cucumber-core` ~> 9.0.1 and `cucumber-messages` ~> 17.0.
-  This brings breaking changes because of internal changes in Cucumber::Messages.
-  ([#44](https://github.com/cucumber/cucumber-ruby-wire/pull/44))
 
 ### Deprecated
 
@@ -27,6 +23,15 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 ### Fixed
 
 ### Dependencies
+
+
+## [6.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v5.0.1...v6.0.0)
+
+### Dependencies
+
+- Updated `cucumber-core` ~> 10.0.0 and `cucumber-messages` ~> 17.0.0
+  This brings breaking changes because of internal changes in Cucumber::Messages.
+  ([#44](https://github.com/cucumber/cucumber-ruby-wire/pull/44))
 
 ## [5.0.1](https://github.com/cucumber/cucumber-ruby-wire/compare/v5.0.0...v5.0.1)
 
