@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'cucumber-core', '~> 9.0', '>= 9.0.1'
   s.add_dependency 'cucumber-cucumber-expressions', '~> 12.1', '>= 12.1.1'
-  s.add_dependency 'cucumber-messages', '~> 16.0', '>= 16.0.0'
+  s.add_dependency 'cucumber-messages', '~> 17.0', '>= 17.0.0'
 
   s.add_development_dependency 'aruba', '~> 1.1', '>= 1.1.1'
   s.add_development_dependency 'cucumber', '~> 6.1', '>= 6.1.0'
