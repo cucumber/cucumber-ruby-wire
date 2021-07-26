@@ -80,7 +80,7 @@ Feature: Wire protocol tags
       Scenario Outline: Everybody's Wired
         Given we're all <something>
 
-        Examples:
+        Examples: 
           | something |
           | wired     |
 
