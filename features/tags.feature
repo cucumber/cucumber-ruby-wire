@@ -10,6 +10,10 @@ Feature: Wire protocol tags
       port: 54321
 
       """
+    And a file named "features/step_definitions/require_wire.rb" with:
+      """
+      require 'cucumber/wire'
+      """
 
   Scenario: Run a scenario
     Given a file named "features/wired.feature" with:
@@ -76,7 +80,7 @@ Feature: Wire protocol tags
       Scenario Outline: Everybody's Wired
         Given we're all <something>
 
-        Examples: 
+        Examples:
           | something |
           | wired     |
 

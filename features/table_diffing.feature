@@ -18,6 +18,10 @@ Feature: Wire protocol table diffing
       port: 54321
 
       """
+    And a file named "features/step_definitions/require_wire.rb" with:
+      """
+      require 'cucumber/wire'
+      """
 
   @spawn
   Scenario: Invoke a step definition tries to diff the table and fails

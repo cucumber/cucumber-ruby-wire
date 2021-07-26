@@ -17,6 +17,10 @@ Feature: Snippets message
       port: 54321
 
       """
+    And a file named "features/step_definitions/require_wire.rb" with:
+      """
+      require 'cucumber/wire'
+      """
 
   @spawn
   Scenario: Wire server returns snippets for a step that didn't match

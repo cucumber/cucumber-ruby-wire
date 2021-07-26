@@ -10,6 +10,10 @@ Feature: Wire protocol docstrings
       port: 54321
 
       """
+    And a file named "features/step_definitions/require_wire.rb" with:
+    """
+    require 'cucumber/wire'
+    """
 
   Scenario: Run a scenario
     Given a file named "features/wired.feature" with:
