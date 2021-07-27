@@ -14,7 +14,14 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Added
 
+- The possibility to verify if the plugin has already been installed or not. To
+  do so, use `Cucumber::Wire::Plugin.installed?`.
+  ([46](https://github.com/cucumber/cucumber-ruby-wire/pull/46))
+
 ### Changed
+
+- `cucumber-wire` is now able to install itself as a plugin into `cucumber-ruby`.
+  ([46](https://github.com/cucumber/cucumber-ruby-wire/pull/46))
 
 ### Deprecated
 
