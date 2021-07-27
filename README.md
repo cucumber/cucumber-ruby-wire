@@ -65,7 +65,7 @@ Gemfile:
 # some gems here...
 
 gem "cucumber"
-gem" cucumber-wire"
+gem "cucumber-wire"
 
 # other gems here
 
