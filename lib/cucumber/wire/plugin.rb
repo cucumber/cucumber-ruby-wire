@@ -9,7 +9,7 @@ module Cucumber
       private :config, :registry
 
       def self.installed?
-        @@installed || false
+        @@installed ||= false
       end
 
       def initialize(config, registry)
