@@ -50,4 +50,4 @@ The wire protocol will be installed, and no deprecation message will be shown an
 
 The usage of the built-in wire protocol will be removed. You will have to install
 `cucumber-wire` and add `require 'cucumber/wire'` in your support code in order
-to continue using it, as explained [above](#with-cucumber-7-1-0).
+to continue using it, as explained [above](#with-cucumber-710).
