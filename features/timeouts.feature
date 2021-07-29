@@ -12,6 +12,10 @@ Feature: Wire protocol timeouts
           Given we're all wired
 
       """
+    And a file named "features/step_definitions/require_wire.rb" with:
+      """
+      require 'cucumber/wire'
+      """
 
   Scenario: Try to talk to a server that's not there
     Given a file named "features/step_definitions/some_remote_place.wire" with:
