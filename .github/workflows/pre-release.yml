@@ -18,17 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Get version numbers
     outputs:
-      released-version: ${{ steps.current-release.outputs.result }}
+      released-version: ${{ steps.current-release.outputs.number }}
       next-version: ${{ steps.next-release.outputs.result }}
     steps:
       - uses: actions/checkout@v2
       - name: read the current release version from git tags
+        uses: cucumber-actions/get-released-version@1.0.0
         id: current-release
-        run: |
-          git fetch --tags
-          version_tag=$(git describe --tags $(git rev-list --tags --max-count=1))
-          version=${version_tag/v/}
-          echo "::set-output name=result::$version"
       - name: read latest version from the changelog
         id: next-release-from-changelog
         uses: cucumber-actions/changelog-action@v1.3
@@ -42,7 +38,7 @@ jobs:
           echo "::set-output name=result::$version"
       - name: Report version numbers detected
         run: |
-          echo "Released: ${{ steps.current-release.outputs.result }}"
+          echo "Released: ${{ steps.current-release.outputs.number }}"
           echo "Next:     ${{ steps.next-release.outputs.result }}"
 
   create-release-pr:
