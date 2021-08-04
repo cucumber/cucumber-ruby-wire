@@ -26,16 +26,10 @@ jobs:
         uses: cucumber-actions/get-released-version@1.0.0
         id: current-release
       - name: read latest version from the changelog
-        id: next-release-from-changelog
         uses: cucumber-actions/changelog-action@v1.3
         with:
           args: latest
-      - name: Parse version number from changelog release name
         id: next-release
-        run: |
-          version_heading=${{ steps.next-release-from-changelog.outputs.result }}
-          version=${version_heading/v}
-          echo "::set-output name=result::$version"
       - name: Report version numbers detected
         run: |
           echo "Released: ${{ steps.current-release.outputs.number }}"
