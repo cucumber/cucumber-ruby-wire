@@ -10,26 +10,17 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ---
 
-## [Unreleased](https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.1...main)
+## [Unreleased]
 
+## [6.1.0]
 ### Added
-
 - The possibility to verify if the plugin has already been installed or not. To
   do so, use `Cucumber::Wire::Plugin.installed?`.
   ([46](https://github.com/cucumber/cucumber-ruby-wire/pull/46))
 
 ### Changed
-
 - `cucumber-wire` is now able to install itself as a plugin into `cucumber-ruby`.
   ([46](https://github.com/cucumber/cucumber-ruby-wire/pull/46))
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Dependencies
 
 ## [6.0.1]
 ### Dependencies
@@ -137,4 +128,6 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 [mattwynne]: https://github.com/mattwynne
 [olleolleolle]: https://github.com/olleolleolle
 
+[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.1.0...main
+[6.1.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.1...v6.1.0
 [6.0.1]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.0...v6.0.1
