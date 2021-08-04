@@ -1,6 +1,6 @@
 # Upgrading from 6.0.1 to 6.1.0
 
-Usage of built-in wire protocol with `cucumber-ruby` will be deprecated in cucumber
+Usage of **built-in** wire protocol with `cucumber-ruby` will be deprecated in cucumber
 7.1.0, and removed in cucumber 8.0.0.
 
 The wire protocol will still be available by explicitely using the `cucumber-wire`
