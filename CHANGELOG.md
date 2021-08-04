@@ -10,7 +10,7 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ---
 
-## [In GIT](https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.1...main)
+## [Unreleased](https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.1...main)
 
 ### Added
 
@@ -31,10 +31,8 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Dependencies
 
-## [6.0.1](https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.0...v6.0.1)
-
+## [6.0.1]
 ### Dependencies
-
 - Patched `cucumber-core` and `cucumber-messages`
 
 ## [6.0.0](https://github.com/cucumber/cucumber-ruby-wire/compare/v5.0.1...v6.0.0)
@@ -138,3 +136,5 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 [junaruga]: https://github.com/junaruga
 [mattwynne]: https://github.com/mattwynne
 [olleolleolle]: https://github.com/olleolleolle
+
+[6.0.1]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.0...v6.0.1
