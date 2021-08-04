@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: read the current release version from git tags
-        uses: cucumber-actions/get-released-version@1.0.0
+        uses: cucumber-actions/get-released-version@v1.0.0
         id: current-release
       - name: read latest version from the changelog
         uses: cucumber-actions/changelog-action@v1.3
