@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - release/*
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: Release
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v2
+      - name: Parse version to be released from branch name
+        id: version-being-released
+        run: |
+          ref="${{ github.ref }}"
+          branch=${ref/refs\/heads\//}
+          version=${branch/release\/v/}
+          echo "::set-output name=result::$version"
+      - name: read latest version from the changelog
+        id: release-notes
+        uses: mattwynne/changelog-action@v1.3
+        with:
+          args: show ${{ steps.version-being-released.outputs.result }}
+      - name: Create release
+        run: |
+          cat >${{ runner.temp }}/notes <<EOT
+          ${{ steps.release-notes.outputs.result }}
+          EOT
+          gh release create \
+            --notes-file ${{ runner.temp }}/notes \
+            v${{ steps.version-being-released.outputs.result }}
+      - name: Release to Rubygems
+        uses: cadwallion/publish-rubygems-action@master
+        env:
+          GITHUB_TOKEN: ${{secrets.CUKEBOT_GITHUB_TOKEN}}
+          RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
