@@ -35,8 +35,11 @@ jobs:
           gh release create \
             --notes-file ${{ runner.temp }}/notes \
             v${{ steps.version-being-released.outputs.result }}
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+          bundler-cache: true
       - name: Release to Rubygems
-        uses: cadwallion/publish-rubygems-action@master
-        env:
-          GITHUB_TOKEN: ${{secrets.CUKEBOT_GITHUB_TOKEN}}
-          RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
+        run: |
+          bundle exec gem build
+          bundle exec gem push cucumber-wire-${{ steps.version-being-release.outputs.result }}.gem -k ${{ env.CUKEBOT_GITHUB_TOKEN }}
