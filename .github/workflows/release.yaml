@@ -13,18 +13,18 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v2
-      - name: Parse version to be released from branch name
-        id: version-being-released
-        run: |
-          ref="${{ github.ref }}"
-          branch=${ref/refs\/heads\//}
-          version=${branch/release\/v/}
-          echo "::set-output name=result::$version"
+      - name: Read version to release from the changelog
+        id: next-release
+        uses: cucumber-actions/changelog-action@v1.3
+        with:
+          args: latest
+      - name: Set version environment variable
+        run: echo "version"=${{ steps.next-release.outputs.result }} > $GITHUB_ENV
       - name: read latest version from the changelog
         id: release-notes
         uses: mattwynne/changelog-action@v1.3
         with:
-          args: show ${{ steps.version-being-released.outputs.result }}
+          args: show ${{ env.version }}
       - name: Create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -34,7 +34,7 @@ jobs:
           EOT
           gh release create \
             --notes-file ${{ runner.temp }}/notes \
-            v${{ steps.version-being-released.outputs.result }}
+            v${{ env.version }}
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
@@ -42,4 +42,4 @@ jobs:
       - name: Release to Rubygems
         run: |
           bundle exec gem build
-          bundle exec gem push cucumber-wire-${{ steps.version-being-release.outputs.result }}.gem -k ${{ env.CUKEBOT_GITHUB_TOKEN }}
+          bundle exec gem push cucumber-wire-${{ env.version }}.gem -k ${{ env.CUKEBOT_GITHUB_TOKEN }}
