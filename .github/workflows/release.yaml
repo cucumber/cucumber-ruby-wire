@@ -19,7 +19,18 @@ jobs:
           args: latest
       - name: Set version environment variable
         run: echo "version"=${{ steps.next-release.outputs.result }} > $GITHUB_ENV
-      - name: read latest version from the changelog
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+          bundler-cache: true
+      - run: |
+          bundle exec gem build cucumber-wire.gemspec
+      - name: Release to Rubygems
+        env:
+          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+        run: |
+          bundle exec gem push cucumber-wire-${{ env.version }}.gem
+      - name: read release notes from the changelog
         id: release-notes
         uses: mattwynne/changelog-action@v1.3
         with:
@@ -34,14 +45,3 @@ jobs:
           gh release create \
             --notes-file ${{ runner.temp }}/notes \
             v${{ env.version }}
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.6
-          bundler-cache: true
-      - run: |
-          bundle exec gem build cucumber-wire.gemspec
-      - name: Release to Rubygems
-        env:
-          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
-        run: |
-          bundle exec gem push cucumber-wire-${{ env.version }}.gem
