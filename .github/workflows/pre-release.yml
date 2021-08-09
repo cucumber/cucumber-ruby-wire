@@ -86,4 +86,5 @@ jobs:
             --base release/v${{ env.next_version }} \
             --head pre-release/v${{ env.next_version }} \
             --title "Release v${{ env.next_version }}" \
-            --body-file ${{ runner.temp }}/body
+            --body-file ${{ runner.temp }}/body \
+            --reviewer @cucumber/cucumber-ruby
