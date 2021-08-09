@@ -28,6 +28,10 @@ Feature: Step matches message
       port: 54321
 
       """
+    And a file named "features/step_definitions/require_wire.rb" with:
+      """
+      require 'cucumber/wire'
+      """
 
   Scenario: Dry run finds no step match
     Given there is a wire server running on port 54321 which understands the following protocol:
