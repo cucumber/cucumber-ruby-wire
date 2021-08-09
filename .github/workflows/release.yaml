@@ -40,6 +40,8 @@ jobs:
           ruby-version: 2.6
           bundler-cache: true
       - name: Release to Rubygems
+        env:
+          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
         run: |
           bundle exec gem build
-          bundle exec gem push cucumber-wire-${{ env.version }}.gem -k ${{ env.CUKEBOT_GITHUB_TOKEN }}
+          bundle exec gem push cucumber-wire-${{ env.version }}.gem
