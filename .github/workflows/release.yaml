@@ -21,7 +21,7 @@ jobs:
         run: echo "version"=${{ steps.next-release.outputs.result }} > $GITHUB_ENV
       - name: read latest version from the changelog
         id: release-notes
-        uses: mattwynne/changelog-action@v1.3
+        uses: cucumber-actions/changelog-action@v1.3
         with:
           args: show ${{ env.version }}
       - name: Create release
