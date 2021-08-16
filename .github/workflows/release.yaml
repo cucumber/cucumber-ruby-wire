@@ -39,7 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cat >${{ runner.temp }}/notes <<EOT
+          cat >${{ runner.temp }}/notes <<"EOT"
           ${{ steps.release-notes.outputs.result }}
           EOT
           gh release create \
