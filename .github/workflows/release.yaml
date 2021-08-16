@@ -32,7 +32,7 @@ jobs:
           bundle exec gem push cucumber-wire-${{ env.version }}.gem
       - name: read release notes from the changelog
         id: release-notes
-        uses: mattwynne/changelog-action@v1.3
+        uses: cucumber-actions/changelog-action@v1.3
         with:
           args: show ${{ env.version }}
       - name: Create release
