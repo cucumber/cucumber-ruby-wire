@@ -10,6 +10,11 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ## [Unreleased]
 
+### Changed
+
+- Use the new `InstallPlugin` hook rather than `AfterConfiguration`.
+  ([#52](https://github.com/cucumber/cucumber-ruby-wire/pull/52))
+
 ## [6.1.0]
 ### Added
 - The possibility to verify if the plugin has already been installed or not. To
