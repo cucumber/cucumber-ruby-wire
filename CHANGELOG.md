@@ -12,6 +12,16 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Changed
 
+### Added
+
+### Fixed
+
+### Removed
+
+## [6.1.1]
+
+### Changed
+
 - Use the new `InstallPlugin` hook rather than `AfterConfiguration`.
   ([#52](https://github.com/cucumber/cucumber-ruby-wire/pull/52))
 
