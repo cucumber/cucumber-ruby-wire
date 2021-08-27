@@ -13,7 +13,7 @@ end
 if ENV['CUCUMBER_RUBY']
   gem 'cucumber', path: ENV['CUCUMBER_RUBY']
 elsif !ENV['CUCUMBER_USE_RELEASED_GEMS']
-  gem 'cucumber', github: 'cucumber/cucumber-ruby', branch: 'deprecate-builtin-wire'
+  gem 'cucumber', github: 'cucumber/cucumber-ruby', branch: 'main'
 end
 
 gem 'aruba', github: 'cucumber/aruba', branch: 'main' # Waiting for a new release of aruba
