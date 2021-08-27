@@ -53,6 +53,6 @@ jobs:
           fetch-depth: 0
       - uses: cucumber-actions/create-release-pr@v1.0.0
         with:
-          current_release: ${{ env.released_version }}
+          released_version: ${{ env.released_version }}
           next_version: ${{ env.next_version }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
