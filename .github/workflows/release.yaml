@@ -45,7 +45,6 @@ jobs:
     name: Publish Ruby Gem
     needs: [pre-release-check, tests]
     runs-on: ubuntu-latest
-    environment: Release
 
     steps:
       - uses: actions/checkout@v2
@@ -57,7 +56,6 @@ jobs:
     name: Create GitHub Release and Git tag
     needs: publish-rubygem
     runs-on: ubuntu-latest
-    environment: Release
     permissions:
       contents: write
 
