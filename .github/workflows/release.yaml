@@ -1,24 +1,68 @@
-name: Release
+name: Release RubyGems
 
 on:
   push:
-    branches: [release/*]
+    branches:
+      - release/*
 
 jobs:
-  release:
+
+  pre-release-check:
+    name: Perform checks before releasing
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Check commit has been pushed on origin/main
+        run: |
+          git fetch --quiet origin main
+          git merge-base --is-ancestor HEAD origin/main
+
+  tests:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        ruby: ['2.5', '2.6', '2.7', '3.0']
+
+        include:
+
+          - os: macos-latest
+            ruby: '3.0'
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run ruby tests
+        uses: ./.github/actions/test-ruby
+        with:
+          ruby-version: ${{ matrix.ruby }}
+
+  publish-rubygem:
+    name: Publish Ruby Gem
+    needs: [pre-release-check, tests]
+    runs-on: ubuntu-latest
+    environment: Release
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Publish ruby gem
+        uses: cucumber/action-publish-rubygem@v1.0.0
+        with:
+          rubygems_api_key: ${{ secrets.RUBYGEMS_API_KEY }}
+
+  create-github-release:
+    name: Create GitHub Release and Git tag
+    needs: publish-rubygem
     runs-on: ubuntu-latest
     environment: Release
     permissions:
       contents: write
+
     steps:
       - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0.2
-          bundler-cache: true
-      - uses: cucumber/action-publish-rubygem@v1.0.0
-        with:
-          rubygems_api_key: ${{ secrets.RUBYGEMS_API_KEY }}
-      - uses: cucumber/action-create-github-release@v1.0.0
+      - uses: cucumber/action-create-github-release@v1.1.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
