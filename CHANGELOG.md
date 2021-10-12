@@ -18,6 +18,12 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Removed
 
+## [6.2.0]
+
+### Changed
+
+- Patched `cucumber-core`, `cucumber-expressions` and `cucumber-messages`
+
 ## [6.1.1]
 
 ### Changed
