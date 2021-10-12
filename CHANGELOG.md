@@ -18,6 +18,12 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Removed
 
+## [6.2.0]
+
+### Changed
+
+- Patched `cucumber-core`, `cucumber-expressions` and `cucumber-messages`
+
 ## [6.1.1]
 
 ### Changed
@@ -101,7 +107,8 @@ is a risk of regressions.
 - Changes to work with a modern Cucumber-Ruby ([#14](https://github.com/cucumber/cucumber-ruby-wire/pull/14) [brasmusson](https://github.com/brasmusson))
 - Adapt to the move of Location to Cucumber::Core::Test ([#14](https://github.com/cucumber/cucumber-ruby-wire/pull/14) [brasmusson](https://github.com/brasmusson))
 
-[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.1.1...main
+[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.0...main
+[6.2.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.1.1...v6.2.0
 [6.1.1]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.1.0...v6.1.1
 [6.1.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.1...v6.1.0
 [6.0.1]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.0...v6.0.1
