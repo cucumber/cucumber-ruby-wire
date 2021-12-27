@@ -3,7 +3,7 @@ require 'cucumber/core/test/location'
 module Cucumber
   module Wire
     class StepDefinition
-      attr_reader :regexp_source, :location, :registry, :expression
+      attr_reader :id, :regexp_source, :location, :registry, :expression
 
       def initialize(connection, data, registry)
         @connection = connection
