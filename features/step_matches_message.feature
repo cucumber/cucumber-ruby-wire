@@ -87,12 +87,15 @@ Feature: Step matches message
     Given there is a wire server running on port 54321 which understands the following protocol:
       | request                                              | response                                                                           |
       | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[{"id":"1", "args":[], "source":"MyApp.MyClass:123", "regexp":"we.*"}]] |
-    When I run `cucumber --format html --publish-quiet`
+      | ["begin_scenario"]                                   | ["success"]                                                                        |
+      | ["invoke",{"id":"1","args":[]}]                      | ["success"]                                                                        |
+      | ["end_scenario"]                                     | ["success"]                                                                        |
+    When I run `cucumber --format message --out messages.json --publish-quiet`
     Then it should pass with:
       """
 
-      1 scenario (1 skipped)
-      1 step (1 skipped)
+      1 scenario (1 passed)
+      1 step (1 passed)
 
       """
     And the stderr should not contain anything

@@ -13,7 +13,7 @@ module Cucumber
   module Wire
 
     class Connections
-      attr_reader :connections
+      attr_reader :connections, :configuration
       private :connections
 
       def initialize(connections, configuration, registry)
@@ -45,7 +45,6 @@ module Cucumber
       def snippets(code_keyword, step_name, multiline_arg_class_name)
         connections.map { |c| c.snippet_text(code_keyword, step_name, multiline_arg_class_name) }.flatten
       end
-
     end
   end
 end
