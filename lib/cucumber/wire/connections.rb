@@ -13,7 +13,7 @@ module Cucumber
   module Wire
 
     class Connections
-      attr_reader :connections, :configuration
+      attr_reader :connections, :configuration, :registry
       private :connections
 
       def initialize(connections, configuration, registry)
