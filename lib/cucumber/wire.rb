@@ -1,5 +1,7 @@
 require 'cucumber/wire/plugin'
 
-AfterConfiguration do |config|
-  Cucumber::Wire::Plugin.new(config).install
+return unless respond_to?(:InstallPlugin)
+
+InstallPlugin do |config, registry|
+  Cucumber::Wire::Plugin.new(config, registry).install
 end

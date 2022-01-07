@@ -1,0 +1,30 @@
+name: Test cucumber-wire
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 5 * * *"
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        ruby: ['2.5', '2.6', '2.7', '3.0']
+        include:
+          - os: macos-latest
+            ruby: '3.0'
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run ruby tests
+        uses: ./.github/actions/test-ruby
+        with:
+          ruby-version: ${{ matrix.ruby }}

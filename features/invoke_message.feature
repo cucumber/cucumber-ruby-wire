@@ -30,7 +30,10 @@ Feature: Invoke message
       port: 54321
 
       """
-
+    And a file named "features/step_definitions/require_wire.rb" with:
+      """
+      require 'cucumber/wire'
+      """
 
   @spawn
   Scenario: Invoke a step definition which is pending

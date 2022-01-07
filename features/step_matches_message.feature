@@ -28,6 +28,10 @@ Feature: Step matches message
       port: 54321
 
       """
+    And a file named "features/step_definitions/require_wire.rb" with:
+      """
+      require 'cucumber/wire'
+      """
 
   Scenario: Dry run finds no step match
     Given there is a wire server running on port 54321 which understands the following protocol:
@@ -77,3 +81,25 @@ Feature: Step matches message
 
       """
     And the stderr should not contain anything
+
+  Scenario: Step matches initialize step definitions compatible with html formatter
+
+    Given there is a wire server running on port 54321 which understands the following protocol:
+      | request                                              | response                                                                           |
+      | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[{"id":"1", "args":[], "source":"MyApp.MyClass:123", "regexp":"we.*"}]] |
+      | ["begin_scenario"]                                   | ["success"]                                                                        |
+      | ["invoke",{"id":"1","args":[]}]                      | ["success"]                                                                        |
+      | ["end_scenario"]                                     | ["success"]                                                                        |
+    When I run `cucumber --format message --out messages.json --publish-quiet`
+    Then it should pass with:
+      """
+
+      1 scenario (1 passed)
+      1 step (1 passed)
+
+      """
+    And the stderr should not contain anything
+    And the file "messages.json" should contain:
+      """
+      {"testRunFinished":{"success":false
+      """
