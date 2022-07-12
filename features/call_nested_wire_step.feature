@@ -19,8 +19,6 @@ Feature: Call nested wire step
       Given "a ruby step that calls a nested step" do
         step "a nested step over the wire"
       end
-      Given "a nested step over the wire" do
-      end
       """
     And there is a wire server running on port 54321 which understands the following protocol:
       | request                                                                   | response                            |
