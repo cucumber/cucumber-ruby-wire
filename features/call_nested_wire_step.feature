@@ -1,5 +1,11 @@
 Feature: Call nested wire step
 
+  If the user specifies a "nested" step in their Ruby step definitions, the
+  search for that step definition should include steps defined over the wire.
+
+  A nested step should still match and be invoked succesfully if it's defined
+  over the wire.
+
   @wip
   Scenario: Call a nested step over the wire
     Given a file named "features/step_definitions/remote.wire" with:
@@ -12,18 +18,19 @@ Feature: Call nested wire step
       """
       Feature: Nested
         Scenario: Nested
-          Given a ruby step that calls a nested step
+	  Given a step over the wire
+          Given a ruby step
       """
     And a file named "features/step_definitions/steps.rb" with:
       """
-      Given "a ruby step that calls a nested step" do
-        step "a nested step over the wire"
+      Given "a ruby step" do
+        step "a step over the wire"
       end
       """
     And there is a wire server running on port 54321 which understands the following protocol:
       | request                                                                   | response                            |
-      | ["step_matches",{"name_to_match":"a ruby step that calls a nested step"}] | ["success",[]]                      |
-      | ["step_matches",{"name_to_match":"a nested step over the wire"}]          | ["success",[{"id":"1", "args":[]}]] |
+      | ["step_matches",{"name_to_match":"a ruby step"}] | ["success",[]]                      |
+      | ["step_matches",{"name_to_match":"a step over the wire"}]          | ["success",[{"id":"1", "args":[]}]] |
       | ["begin_scenario"]                                                        | ["success"]                         |
       | ["invoke",{"id":"1","args":[]}]                                           | ["success"]                         |
       | ["end_scenario"]                                                          | ["success"]                         |
