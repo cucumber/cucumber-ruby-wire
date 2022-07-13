@@ -16,13 +16,17 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Fixed
 
+### Removed
+
+## [6.2.1]
+
+### Fixed
+
 - Fix usage with message-related formatters like the html formatter
   ([PR#57](https://github.com/cucumber/cucumber-ruby-wire/pull/57)
    [Issue#56](https://github.com/cucumber/cucumber-ruby-wire/issues/56))
 
 - Removed dependency to cucumber-messages
-
-### Removed
 
 ## [6.2.0]
 
@@ -113,7 +117,8 @@ is a risk of regressions.
 - Changes to work with a modern Cucumber-Ruby ([#14](https://github.com/cucumber/cucumber-ruby-wire/pull/14) [brasmusson](https://github.com/brasmusson))
 - Adapt to the move of Location to Cucumber::Core::Test ([#14](https://github.com/cucumber/cucumber-ruby-wire/pull/14) [brasmusson](https://github.com/brasmusson))
 
-[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.0...main
+[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.1...main
+[6.2.1]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.0...v6.2.1
 [6.2.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.1.1...v6.2.0
 [6.1.1]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.1.0...v6.1.1
 [6.1.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.0.1...v6.1.0
