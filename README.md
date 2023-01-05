@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/cucumber/cucumber-ruby-wire.svg?style=svg)](https://circleci.com/gh/cucumber/cucumber-ruby-wire)
+[![Test cucumber-wire](https://github.com/cucumber/cucumber-ruby-wire/actions/workflows/cucumber-ruby-wire.yml/badge.svg)](https://github.com/cucumber/cucumber-ruby-wire/actions/workflows/cucumber-ruby-wire.yml)
 
 # cucumber-wire
 
