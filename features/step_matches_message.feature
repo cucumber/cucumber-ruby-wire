@@ -86,9 +86,9 @@ Feature: Step matches message
 
     Given there is a wire server running on port 54321 which understands the following protocol:
       | request                                              | response                                                                           |
-      | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[{"id":"1", "args":[], "source":"MyApp.MyClass:123", "regexp":"we.*"}]] |
+      | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[{"id":"1", "args":[{"pos": 11, "val": "wired"}], "source":"MyApp.MyClass:123", "regexp":"we're all (.*)"}]] |
       | ["begin_scenario"]                                   | ["success"]                                                                        |
-      | ["invoke",{"id":"1","args":[]}]                      | ["success"]                                                                        |
+      | ["invoke",{"id":"1","args":["wired"]}]               | ["success"]                                                                        |
       | ["end_scenario"]                                     | ["success"]                                                                        |
     When I run `cucumber --format message --out messages.json --publish-quiet`
     Then it should pass with:
