@@ -16,4 +16,4 @@ elsif !ENV['CUCUMBER_USE_RELEASED_GEMS']
   gem 'cucumber', github: 'cucumber/cucumber-ruby', tag: 'v7.1.0'
 end
 
-gem 'aruba', github: 'cucumber/aruba', branch: 'main' # Waiting for a new release of aruba
+gem 'aruba', github: 'cucumber/aruba', tag: 'v2.0.0' # lock in v2 for staying with cucumber v7.x
