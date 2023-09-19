@@ -16,6 +16,10 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ### Fixed
 
+- Fix usage with message-related formatters like the html formatter especial for steps with arguments
+  ([PR#65](https://github.com/cucumber/cucumber-ruby-wire/pull/65)
+   [Issue#56](https://github.com/cucumber/cucumber-ruby-wire/issues/56))
+
 ### Removed
 
 ## [6.2.1]
