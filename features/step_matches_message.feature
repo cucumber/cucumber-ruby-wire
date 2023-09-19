@@ -101,5 +101,5 @@ Feature: Step matches message
     And the stderr should not contain anything
     And the file "messages.json" should contain:
       """
-      {"testRunFinished":{"success":false
+      {"testRunFinished":{"success":true
       """
