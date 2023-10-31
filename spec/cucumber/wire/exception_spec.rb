@@ -18,7 +18,7 @@ module Cucumber
         end
 
         it "#to_s as expecteds" do
-          expect(exception.to_s).to eq "foo"
+          expect(exception.to_s).to eq("foo")
         end
       end
 
@@ -28,11 +28,11 @@ module Cucumber
         end
 
         it "#to_s as expecteds" do
-          expect(exception.to_s).to eq "foo"
+          expect(exception.to_s).to eq("foo")
         end
 
         it "#class.to_s returns the name of the exception" do
-          expect(exception.class.to_s).to eq 'Bar from localhost:54321'
+          expect(exception.class.to_s).to eq('Bar from localhost:54321')
         end
       end
 
@@ -42,7 +42,7 @@ module Cucumber
         end
 
         it "#backrace returns the custom backtrace" do
-          expect(exception.backtrace).to eq ['foo', 'bar', 'baz']
+          expect(exception.backtrace).to eq(['foo', 'bar', 'baz'])
         end
       end
     end

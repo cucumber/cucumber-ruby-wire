@@ -10,12 +10,12 @@ module Cucumber
           connection2 = double(step_matches: [:c])
 
           connections = Connections.new([connection1, connection2], double, double)
-          expect(connections.step_matches('')).to eq [:a, :b, :c]
+          expect(connections.step_matches('')).to eq([:a, :b, :c])
         end
 
         it "copes with no connections" do
           connections = Connections.new([], double, double)
-          expect(connections.step_matches('')).to eq []
+          expect(connections.step_matches('')).to eq([])
         end
       end
     end
