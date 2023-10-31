@@ -2,7 +2,7 @@ $LOAD_PATH.unshift File.expand_path('lib', __dir__)
 
 Gem::Specification.new do |s|
   s.name        = 'cucumber-wire'
-  s.version     = File.read(File.dirname(__FILE__) + '/lib/cucumber/wire/version').strip
+  s.version     = File.read("#{__dir__}/VERSION")
   s.authors     = ['Matt Wynne']
   s.description = 'Wire protocol for Cucumber'
   s.summary     = "cucumber-wire-#{s.version}"
