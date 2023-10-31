@@ -8,7 +8,6 @@ Feature: Wire protocol docstrings
       """
       host: localhost
       port: 54321
-
       """
     And a file named "features/step_definitions/require_wire.rb" with:
     """
@@ -39,5 +38,4 @@ Feature: Wire protocol docstrings
 
       1 scenario (1 passed)
       1 step (1 passed)
-
       """

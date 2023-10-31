@@ -10,13 +10,11 @@ Feature: Wire protocol table diffing
       Feature: Hello
         Scenario: Wired
           Given we're all wired
-
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
       host: localhost
       port: 54321
-
       """
     And a file named "features/step_definitions/require_wire.rb" with:
       """
@@ -50,7 +48,6 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 failed)
       1 step (1 failed)
-
       """
 
   Scenario: Invoke a step definition tries to diff the table and passes
@@ -68,7 +65,6 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 passed)
       1 step (1 passed)
-
       """
 
   @spawn
@@ -95,7 +91,6 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 failed)
       1 step (1 failed)
-
       """
 
   @spawn
@@ -124,5 +119,4 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 failed)
       1 step (1 failed)
-
       """

@@ -10,7 +10,6 @@ Feature: Wire protocol timeouts
       Feature: Telegraphy
         Scenario: Wired
           Given we're all wired
-
       """
     And a file named "features/step_definitions/require_wire.rb" with:
       """
@@ -22,7 +21,6 @@ Feature: Wire protocol timeouts
       """
       host: 127.0.0.1
       port: 54321
-
       """
     When I run `cucumber -f progress`
     Then the stderr should contain:
@@ -38,7 +36,6 @@ Feature: Wire protocol timeouts
       port: 54321
       timeout:
         invoke: 0.1
-
       """
     And there is a wire server on port 54321 which understands the following protocol:
       | request                                              | response                                                     |
@@ -63,5 +60,4 @@ Feature: Wire protocol timeouts
 
       1 scenario (1 failed)
       1 step (1 failed)
-
       """

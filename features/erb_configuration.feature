@@ -10,7 +10,6 @@ Feature: ERB configuration
       Feature: High strung
         Scenario: Wired
           Given we're all wired
-
       """
     And a file named "features/step_definitions/require_wire.rb" with:
       """
@@ -33,9 +32,7 @@ Feature: ERB configuration
 
         1 scenario (1 undefined)
         1 step (1 undefined)
-
         """
-
 
   Scenario: ERB is used in the wire file which references an environment variable
       Given I have environment variable PORT set to "16816"
@@ -54,5 +51,4 @@ Feature: ERB configuration
 
         1 scenario (1 undefined)
         1 step (1 undefined)
-
         """

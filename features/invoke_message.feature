@@ -22,13 +22,11 @@ Feature: Invoke message
       Feature: High strung
         Scenario: Wired
           Given we're all wired
-
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
       host: localhost
       port: 54321
-
       """
     And a file named "features/step_definitions/require_wire.rb" with:
       """
@@ -53,7 +51,6 @@ Feature: Invoke message
 
       1 scenario (1 pending)
       1 step (1 pending)
-
       """
 
   Scenario: Invoke a step definition which passes
@@ -70,7 +67,6 @@ Feature: Invoke message
 
       1 scenario (1 passed)
       1 step (1 passed)
-
       """
 
   @spawn
@@ -110,7 +106,6 @@ Feature: Invoke message
 
       1 scenario (1 failed)
       1 step (1 failed)
-
       """
 
   Scenario: Invoke a step definition which takes string arguments (and passes)
@@ -142,7 +137,6 @@ Feature: Invoke message
 
       1 scenario (1 passed)
       1 step (1 passed)
-
       """
 
   Scenario: Invoke a step definition which takes regular and table arguments (and passes)
@@ -176,7 +170,6 @@ Feature: Invoke message
 
       1 scenario (1 passed)
       1 step (1 passed)
-
       """
 
   Scenario: Invoke a scenario outline step
@@ -204,7 +197,6 @@ Feature: Invoke message
 
       1 scenario (1 passed)
       1 step (1 passed)
-
       """
     And the wire server should have received the following messages:
       | step_matches   |

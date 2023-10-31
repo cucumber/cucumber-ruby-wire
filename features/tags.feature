@@ -8,7 +8,6 @@ Feature: Wire protocol tags
       """
       host: localhost
       port: 54321
-
       """
     And a file named "features/step_definitions/require_wire.rb" with:
       """
@@ -24,7 +23,6 @@ Feature: Wire protocol tags
           @baz
           Scenario: Everybody's Wired
             Given we're all wired
-
       """
     And there is a wire server running on port 54321 which understands the following protocol:
       | request                                              | response                            |
@@ -45,7 +43,6 @@ Feature: Wire protocol tags
 
       1 scenario (1 passed)
       1 step (1 passed)
-
       """
 
   Scenario: Run a scenario outline example
@@ -61,7 +58,6 @@ Feature: Wire protocol tags
         Examples:
           | something |
           | wired     |
-
     """
   And there is a wire server running on port 54321 which understands the following protocol:
     | request                                              | response                            |
@@ -86,5 +82,4 @@ Feature: Wire protocol tags
 
     1 scenario (1 passed)
     1 step (1 passed)
-
     """
