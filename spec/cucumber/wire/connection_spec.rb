@@ -38,7 +38,7 @@ module Cucumber
 
       it "re-raises a timeout error" do
         allow(Timeout).to receive(:timeout).and_raise(Timeout::Error.new(''))
-        expect(-> { @connection.call_remote(nil, :foo, []) }).to raise_error(Timeout::Error)
+        expect { @connection.call_remote(nil, :foo, []) }.to raise_error(Timeout::Error)
       end
 
       it "ignores timeout errors when configured to do so" do
@@ -48,16 +48,14 @@ module Cucumber
 
         handler = double(:handle_response => :response)
 
-        expect(@connection.call_remote(handler, :foo, [])).to eq :response
+        expect(@connection.call_remote(handler, :foo, [])).to eq(:response)
       end
 
       it "raises an exception on remote connection closed" do
         @config.custom_timeout[:foo] = :never
 
         allow(@socket).to receive(:gets)
-        expect(-> {
-          @connection.call_remote(nil, :foo, [])
-        }).to raise_error(Wire::Exception, 'Remote Socket with localhost:3902 closed.')
+        expect { @connection.call_remote(nil, :foo, []) }.to raise_error(Wire::Exception, 'Remote Socket with localhost:3902 closed.')
       end
     end
   end

@@ -1,5 +1,3 @@
-# coding: utf-8
-
 module Cucumber
   module Wire
     class AddHooksFilter < Core::Filter.new(:connections)

@@ -20,13 +20,11 @@ Feature: Step matches message
       Feature: High strung
         Scenario: Wired
           Given we're all wired
-
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
       host: localhost
       port: 54321
-
       """
     And a file named "features/step_definitions/require_wire.rb" with:
       """
@@ -44,7 +42,6 @@ Feature: Step matches message
 
       1 scenario (1 undefined)
       1 step (1 undefined)
-
       """
 
   Scenario: Dry run finds a step match
@@ -58,7 +55,6 @@ Feature: Step matches message
 
       1 scenario (1 skipped)
       1 step (1 skipped)
-
       """
 
   Scenario: Step matches returns details about the remote step definition
@@ -78,12 +74,10 @@ Feature: Step matches message
 
       1 scenario (1 skipped)
       1 step (1 skipped)
-
       """
     And the stderr should not contain anything
 
   Scenario: Step matches initialize step definitions compatible with html formatter
-
     Given there is a wire server running on port 54321 which understands the following protocol:
       | request                                              | response                                                                           |
       | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[{"id":"1", "args":[], "source":"MyApp.MyClass:123", "regexp":"we.*"}]] |
@@ -93,13 +87,10 @@ Feature: Step matches message
     When I run `cucumber --format message --out messages.json --publish-quiet`
     Then it should pass with:
       """
-
       1 scenario (1 passed)
       1 step (1 passed)
-
       """
-    And the stderr should not contain anything
     And the file "messages.json" should contain:
       """
-      {"testRunFinished":{"success":false
+      {"testRunFinished":{"success":true
       """

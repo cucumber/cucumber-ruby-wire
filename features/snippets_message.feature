@@ -9,13 +9,11 @@ Feature: Snippets message
       Feature: High strung
         Scenario: Wired
           Given we're all wired
-
       """
     And a file named "features/step_definitions/some_remote_place.wire" with:
       """
       host: localhost
       port: 54321
-
       """
     And a file named "features/step_definitions/require_wire.rb" with:
       """
@@ -47,5 +45,4 @@ Feature: Snippets message
       foo()
         bar;
       baz
-
       """

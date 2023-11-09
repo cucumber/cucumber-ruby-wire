@@ -1,4 +1,3 @@
-# coding: utf-8
 require 'cucumber/wire/request_handler'
 require 'cucumber/wire/step_argument'
 
