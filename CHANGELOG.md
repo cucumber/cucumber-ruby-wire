@@ -11,10 +11,13 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 ## [Unreleased]
 
 ### Changed
+- Minimum ruby version is now 2.6 ([#68](https://github.com/cucumber/cucumber-ruby-wire/pull/68))
+- Compatibility with cucumber versions up to cucumber 9.x now added ([#68](https://github.com/cucumber/cucumber-ruby-wire/pull/68))
 
 ### Added
 
 ### Fixed
+- Fixed up some basic style incompatibilities with old rspec tests ([#68](https://github.com/cucumber/cucumber-ruby-wire/pull/68))
 
 ### Removed
 
