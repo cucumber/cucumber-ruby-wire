@@ -10,11 +10,12 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ## [Unreleased]
 
+## [7.0.0] - 2023-11-10
+### Added
+
 ### Changed
 - Minimum ruby version is now 2.6 ([#68](https://github.com/cucumber/cucumber-ruby-wire/pull/68))
 - Compatibility with cucumber versions up to cucumber 9.x now added ([#68](https://github.com/cucumber/cucumber-ruby-wire/pull/68))
-
-### Added
 
 ### Fixed
 - Fixed up some basic style incompatibilities with old rspec tests ([#68](https://github.com/cucumber/cucumber-ruby-wire/pull/68))
@@ -33,7 +34,7 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 ## [6.1.1] - 2021-08-27
 ### Changed
 - Use the new `InstallPlugin` hook rather than `AfterConfiguration`.
-  ([#52](https://github.com/cucumber/cucumber-ruby-wire/pull/52))
+([#52](https://github.com/cucumber/cucumber-ruby-wire/pull/52))
 
 ## [6.1.0] - 2021-08-09
 ### Added
@@ -55,7 +56,8 @@ do so, use `Cucumber::Wire::Plugin.installed?`.
 This brings breaking changes because of internal changes in Cucumber::Messages.
 ([#44](https://github.com/cucumber/cucumber-ruby-wire/pull/44))
 
-[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.1...HEAD
+[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v7.0.0...HEAD
+[7.0.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.1...v7.0.0
 [6.2.1]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.0...v6.2.1
 [6.2.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.1.1...v6.2.0
 [6.1.1]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.1.0...v6.1.1
