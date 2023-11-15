@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.license     = 'MIT'
   s.required_ruby_version = '>= 2.6'
+  s.required_rubygems_version = '>= 3.0.3'
 
   s.add_dependency 'cucumber-core', '> 10.1', '< 14'
   s.add_dependency 'cucumber-cucumber-expressions', '> 14', '< 18'
