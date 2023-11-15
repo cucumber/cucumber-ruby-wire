@@ -14,15 +14,15 @@ module Cucumber
         class MultilineArgClassName
           def initialize(arg)
             arg.describe_to(self)
-            @result = ""
+            @result = ''
           end
 
           def data_table(*)
-            @result = "Cucumber::MultilineArgument::DataTable"
+            @result = 'Cucumber::MultilineArgument::DataTable'
           end
 
           def doc_string(*)
-            @result = "Cucumber::MultilineArgument::DocString"
+            @result = 'Cucumber::MultilineArgument::DocString'
           end
 
           def to_s
