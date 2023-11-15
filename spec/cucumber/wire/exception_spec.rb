@@ -14,7 +14,7 @@ module Cucumber
 
       describe 'with just a message' do
         before(:each) do
-          @data = {'message' => 'foo'}
+          @data = { 'message' => 'foo' }
         end
 
         it '#to_s as expecteds' do
@@ -24,7 +24,7 @@ module Cucumber
 
       describe 'with a message and an exception' do
         before(:each) do
-          @data = {'message' => 'foo', 'exception' => 'Bar'}
+          @data = { 'message' => 'foo', 'exception' => 'Bar' }
         end
 
         it '#to_s as expecteds' do
@@ -38,7 +38,7 @@ module Cucumber
 
       describe 'with a custom backtrace' do
         before(:each) do
-          @data = {'message' => 'foo', 'backtrace' => ['foo', 'bar', 'baz']}
+          @data = { 'message' => 'foo', 'backtrace' => ['foo', 'bar', 'baz'] }
         end
 
         it '#backrace returns the custom backtrace' do
