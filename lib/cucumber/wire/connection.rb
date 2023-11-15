@@ -22,7 +22,7 @@ module Cucumber
           response = fetch_data_from_socket(@config.timeout(message))
           response.handle_with(request_handler)
         rescue Timeout::Error => e
-          backtrace = e.backtrace ; backtrace.shift # because Timeout puts some wierd stuff in there
+          backtrace = e.backtrace; backtrace.shift # because Timeout puts some wierd stuff in there
           raise Timeout::Error, "Timed out calling wire server with message '#{message}'", backtrace
         end
       end

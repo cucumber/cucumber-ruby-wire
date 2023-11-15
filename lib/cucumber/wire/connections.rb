@@ -31,7 +31,7 @@ module Cucumber
       end
 
       def step_matches(step_name)
-        connections.map{ |c| c.step_matches(step_name, @registry) }.flatten
+        connections.map { |c| c.step_matches(step_name, @registry) }.flatten
       end
 
       def begin_scenario(test_case)
