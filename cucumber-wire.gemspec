@@ -20,6 +20,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'cucumber', '> 7.1', '< 10'
   s.add_development_dependency 'rake', '~> 13.1'
   s.add_development_dependency 'rspec', '~> 3.12'
+  s.add_development_dependency 'rubocop', '~> 1.35.0'
+  s.add_development_dependency 'rubocop-rspec', '~> 2.5.0'
+  s.add_development_dependency 'rubocop-packaging', '~> 0.5.2'
+  s.add_development_dependency 'rubocop-performance', '~> 1.15.0'
 
   s.files = Dir['CHANGELOG.md', 'CHANGELOG.old.md', 'CONTRIBUTING.md', 'README.md', 'LICENSE', 'lib/**/*']
   s.rdoc_options     = ['--charset=UTF-8']
