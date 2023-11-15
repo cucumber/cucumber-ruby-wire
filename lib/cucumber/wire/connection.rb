@@ -22,7 +22,7 @@ module Cucumber
           response = fetch_data_from_socket(@config.timeout(message))
           response.handle_with(request_handler)
         rescue Timeout::Error => e
-          backtrace = e.backtrace ; backtrace.shift # because Timeout puts some wierd stuff in there
+          backtrace = e.backtrace; backtrace.shift # because Timeout puts some wierd stuff in there
           raise Timeout::Error, "Timed out calling wire server with message '#{message}'", backtrace
         end
       end
@@ -44,12 +44,14 @@ module Cucumber
           else
             Timeout.timeout(timeout) { socket.gets }
           end
-        raise exception({'message' => "Remote Socket with #{@config.host}:#{@config.port} closed."}) if raw_response.nil?
+        raise exception({ 'message' => "Remote Socket with #{@config.host}:#{@config.port} closed." }) if raw_response.nil?
+
         DataPacket.parse(raw_response)
       end
 
       def socket
         return @socket if @socket
+
         if @config.unix
           @socket = UNIXSocket.new(@config.unix)
         else

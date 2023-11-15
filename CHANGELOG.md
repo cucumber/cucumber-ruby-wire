@@ -9,18 +9,20 @@ This document is formatted according to the principles of [Keep A CHANGELOG](htt
 Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CONTRIBUTING.md) for more info on how to contribute to Cucumber.
 
 ## [Unreleased]
+### Added
+- Added some basic rubocop compliance to suite (More fixes to come) ([#69](https://github.com/cucumber/cucumber-ruby-wire/pull/69))
+
+### Changed
+
+### Fixed
 
 ## [7.0.0] - 2023-11-10
-### Added
-
 ### Changed
 - Minimum ruby version is now 2.6 ([#68](https://github.com/cucumber/cucumber-ruby-wire/pull/68))
 - Compatibility with cucumber versions up to cucumber 9.x now added ([#68](https://github.com/cucumber/cucumber-ruby-wire/pull/68))
 
 ### Fixed
 - Fixed up some basic style incompatibilities with old rspec tests ([#68](https://github.com/cucumber/cucumber-ruby-wire/pull/68))
-
-### Removed
 
 ## [6.2.1] - 2022-01-07
 ### Fixed

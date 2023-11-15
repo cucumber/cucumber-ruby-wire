@@ -4,6 +4,7 @@ module Cucumber
     class Exception < StandardError
       module CanSetName
         attr_writer :exception_name
+
         def to_s
           @exception_name
         end

@@ -11,13 +11,13 @@ require 'cucumber/step_match'
 
 module Cucumber
   module Wire
-
     class Connections
       attr_reader :connections, :configuration, :registry
       private :connections
 
       def initialize(connections, configuration, registry)
         raise ArgumentError unless connections
+
         @connections = connections
         @configuration = configuration
         @registry = registry
@@ -26,12 +26,13 @@ module Cucumber
       def find_match(test_step)
         matches = step_matches(test_step.name)
         return unless matches.any?
+
         # TODO: handle ambiguous matches (push to cucumber?)
         matches.first
       end
 
       def step_matches(step_name)
-        connections.map{ |c| c.step_matches(step_name, @registry)}.flatten
+        connections.map { |c| c.step_matches(step_name, @registry) }.flatten
       end
 
       def begin_scenario(test_case)

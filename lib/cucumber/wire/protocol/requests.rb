@@ -9,7 +9,7 @@ module Cucumber
           def execute(name_to_match)
             @name_to_match = name_to_match
             request_params = {
-              :name_to_match => name_to_match
+              name_to_match: name_to_match
             }
             super(request_params)
           end
@@ -40,9 +40,9 @@ module Cucumber
         class SnippetText < RequestHandler
           def execute(step_keyword, step_name, multiline_arg_class_name)
             request_params = {
-              :step_keyword => step_keyword,
-              :step_name => step_name,
-              :multiline_arg_class => multiline_arg_class_name
+              step_keyword: step_keyword,
+              step_name: step_name,
+              multiline_arg_class: multiline_arg_class_name
             }
             super(request_params)
           end
@@ -57,14 +57,14 @@ module Cucumber
         class Invoke < RequestHandler
           def execute(step_definition_id, args)
             request_params = {
-              :id => step_definition_id,
-              :args => args
+              id: step_definition_id,
+              args: args
             }
             super(request_params)
           end
 
           def handle_pending(message)
-            raise Pending, message || "TODO"
+            raise Pending, message || 'TODO'
           end
 
           def handle_diff!(tables)
@@ -108,7 +108,8 @@ module Cucumber
 
           def request_params(test_case)
             return nil unless test_case.tags.any?
-            { "tags" => clean_tag_names(test_case.tags) }
+
+            { 'tags' => clean_tag_names(test_case.tags) }
           end
 
           def clean_tag_names(tags)
@@ -119,7 +120,6 @@ module Cucumber
         BeginScenario = Class.new(HookRequestHandler)
 
         EndScenario = Class.new(HookRequestHandler)
-
       end
     end
   end

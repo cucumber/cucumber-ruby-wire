@@ -24,6 +24,7 @@ module Cucumber
 
       def to_s
         return @unix if @unix
+
         "#{@host}:#{@port}"
       end
 

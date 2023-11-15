@@ -17,6 +17,7 @@ module Cucumber
 
         def timeout(message = nil)
           return :default_timeout if message.nil?
+
           @custom_timeout[message] || Configuration::DEFAULT_TIMEOUTS.fetch(message)
         end
 
@@ -36,22 +37,22 @@ module Cucumber
         @response = %q{["response"]}
       end
 
-      it "re-raises a timeout error" do
+      it 're-raises a timeout error' do
         allow(Timeout).to receive(:timeout).and_raise(Timeout::Error.new(''))
         expect { @connection.call_remote(nil, :foo, []) }.to raise_error(Timeout::Error)
       end
 
-      it "ignores timeout errors when configured to do so" do
+      it 'ignores timeout errors when configured to do so' do
         @config.custom_timeout[:foo] = :never
 
         allow(@socket).to receive(:gets) { @response }
 
-        handler = double(:handle_response => :response)
+        handler = double(handle_response: :response)
 
         expect(@connection.call_remote(handler, :foo, [])).to eq(:response)
       end
 
-      it "raises an exception on remote connection closed" do
+      it 'raises an exception on remote connection closed' do
         @config.custom_timeout[:foo] = :never
 
         allow(@socket).to receive(:gets)
