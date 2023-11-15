@@ -42,6 +42,7 @@ module WireHelper
 
   def stop_wire_server
     return unless @wire_pid
+
     Process.kill('KILL', @wire_pid)
     Process.wait(@wire_pid)
   rescue Errno::ESRCH

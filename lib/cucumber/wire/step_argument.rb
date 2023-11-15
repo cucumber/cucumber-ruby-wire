@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'cucumber/cucumber_expressions/group'
 
 module Cucumber

@@ -108,6 +108,7 @@ module Cucumber
 
           def request_params(test_case)
             return nil unless test_case.tags.any?
+
             { 'tags' => clean_tag_names(test_case.tags) }
           end
 
@@ -119,7 +120,6 @@ module Cucumber
         BeginScenario = Class.new(HookRequestHandler)
 
         EndScenario = Class.new(HookRequestHandler)
-
       end
     end
   end

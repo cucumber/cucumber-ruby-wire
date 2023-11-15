@@ -17,6 +17,7 @@ module Cucumber
 
         def timeout(message = nil)
           return :default_timeout if message.nil?
+
           @custom_timeout[message] || Configuration::DEFAULT_TIMEOUTS.fetch(message)
         end
 

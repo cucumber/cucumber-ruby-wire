@@ -17,7 +17,6 @@ module Cucumber
       def invoke(args)
         @connection.invoke(@id, args)
       end
-
     end
   end
 end
