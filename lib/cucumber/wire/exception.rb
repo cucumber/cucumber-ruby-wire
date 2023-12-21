@@ -19,9 +19,9 @@ module Cucumber
         if args['backtrace']
           @backtrace = if args['backtrace'].is_a?(String)
               args['backtrace'].split("\n") # TODO: change cuke4nuke to pass an array instead of a big string
-            else
+                       else
               args['backtrace']
-            end
+                       end
         end
       end
 
