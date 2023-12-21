@@ -4,7 +4,7 @@ require 'cucumber/wire/configuration'
 module Cucumber
   module Wire
     describe Exception do
-      before(:each) do
+      before do
         @config = Configuration.new('host' => 'localhost', 'port' => 54321)
       end
 
@@ -13,7 +13,7 @@ module Cucumber
       end
 
       describe 'with just a message' do
-        before(:each) do
+        before do
           @data = { 'message' => 'foo' }
         end
 
@@ -23,7 +23,7 @@ module Cucumber
       end
 
       describe 'with a message and an exception' do
-        before(:each) do
+        before do
           @data = { 'message' => 'foo', 'exception' => 'Bar' }
         end
 
@@ -37,7 +37,7 @@ module Cucumber
       end
 
       describe 'with a custom backtrace' do
-        before(:each) do
+        before do
           @data = { 'message' => 'foo', 'backtrace' => ['foo', 'bar', 'baz'] }
         end
 

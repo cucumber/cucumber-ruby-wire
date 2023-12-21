@@ -30,7 +30,7 @@ module Cucumber
         end
       end
 
-      before(:each) do
+      before do
         @config = TestConfiguration.new
         @connection = TestConnection.new(@config)
         @connection.socket = @socket = double('socket').as_null_object
