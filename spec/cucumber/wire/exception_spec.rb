@@ -40,11 +40,11 @@ module Cucumber
 
       describe 'with a custom backtrace' do
         before(:each) do
-          @data = { 'message' => 'foo', 'backtrace' => ['foo', 'bar', 'baz'] }
+          @data = { 'message' => 'foo', 'backtrace' => %w[foo bar baz] }
         end
 
         it '#backrace returns the custom backtrace' do
-          expect(exception.backtrace).to eq(['foo', 'bar', 'baz'])
+          expect(exception.backtrace).to eq(%w[foo bar baz])
         end
       end
     end
