@@ -15,8 +15,7 @@ module Cucumber
         raise @connection.exception(params)
       end
 
-      def handle_success(params)
-      end
+      def handle_success(params); end
 
       private
 
