@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cucumber/wire/protocol/requests'
 
 module Cucumber

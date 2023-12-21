@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cucumber/wire/connection'
 require 'cucumber/wire/configuration'
 
@@ -30,7 +32,7 @@ module Cucumber
         end
       end
 
-      before do
+      before(:each) do
         @config = TestConfiguration.new
         @connection = TestConnection.new(@config)
         @connection.socket = @socket = double('socket').as_null_object

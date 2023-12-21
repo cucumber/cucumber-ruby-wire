@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cucumber
   module Wire
     class AddHooksFilter < Core::Filter.new(:connections)

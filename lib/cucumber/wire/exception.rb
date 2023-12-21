@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cucumber
   module Wire
     # Proxy for an exception that occurred at the remote end of the wire

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cucumber/wire/data_packet'
 
 module Cucumber

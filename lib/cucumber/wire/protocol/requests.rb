@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cucumber/wire/request_handler'
 require 'cucumber/wire/step_argument'
 

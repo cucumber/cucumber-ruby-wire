@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'timeout'
 require 'cucumber/wire/protocol'
 require 'cucumber/wire/exception'

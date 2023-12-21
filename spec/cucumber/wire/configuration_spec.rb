@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cucumber/wire/configuration'
 require 'tempfile'
 
@@ -45,7 +47,7 @@ module Cucumber
       end
 
       describe 'a wire file with no timeouts specified' do
-        before do
+        before(:each) do
           write_wire_file %q{
             host: localhost
             port: 54321
