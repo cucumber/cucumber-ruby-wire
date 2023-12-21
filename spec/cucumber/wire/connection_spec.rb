@@ -36,7 +36,7 @@ module Cucumber
         @config = TestConfiguration.new
         @connection = TestConnection.new(@config)
         @connection.socket = @socket = double('socket').as_null_object
-        @response = %q{["response"]}
+        @response = %q(["response"])
       end
 
       it 're-raises a timeout error' do
