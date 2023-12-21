@@ -2,10 +2,6 @@ source 'https://rubygems.org'
 
 gemspec
 
-if ENV['CUCUMBER_RUBY_CORE']
-  gem 'cucumber-core', path: ENV['CUCUMBER_RUBY_CORE']
-end
+gem 'cucumber-core', path: ENV['CUCUMBER_RUBY_CORE'] if ENV['CUCUMBER_RUBY_CORE']
 
-if ENV['CUCUMBER_RUBY']
-  gem 'cucumber', path: ENV['CUCUMBER_RUBY']
-end
+gem 'cucumber', path: ENV['CUCUMBER_RUBY'] if ENV['CUCUMBER_RUBY']
