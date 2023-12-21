@@ -7,7 +7,7 @@ module Cucumber
           @connections = connections
         end
 
-        def call(code_keyword, step_name, multiline_arg, snippet_type)
+        def call(code_keyword, step_name, multiline_arg, _snippet_type)
           @connections.snippets(code_keyword, step_name, MultilineArgClassName.new(multiline_arg).to_s).join("\n")
         end
 
