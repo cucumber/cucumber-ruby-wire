@@ -21,7 +21,7 @@ module Cucumber
         }
 
         expect(config.host).to eq('localhost')
-        expect(config.port).to eq(54321)
+        expect(config.port).to eq(54_321)
       end
 
       it 'reads the timeout for a specific message' do

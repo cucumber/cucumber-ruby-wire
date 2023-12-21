@@ -7,7 +7,7 @@ module Cucumber
   module Wire
     describe Exception do
       before(:each) do
-        @config = Configuration.new('host' => 'localhost', 'port' => 54321)
+        @config = Configuration.new('host' => 'localhost', 'port' => 54_321)
       end
 
       def exception
