@@ -56,10 +56,10 @@ class FakeWireServer
         send_response(protocol_entry['response'])
       else
         serialized_exception = { message: "Not understood: #{data}", backtrace: [] }
-        send_response(['fail', serialized_exception ].to_json)
+        send_response(['fail', serialized_exception].to_json)
       end
     rescue => e
-      send_response(['fail', { message: e.message, backtrace: e.backtrace, exception: e.class } ].to_json)
+      send_response(['fail', { message: e.message, backtrace: e.backtrace, exception: e.class }].to_json)
     end
 
     def response_to(data)
