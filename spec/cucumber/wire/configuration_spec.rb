@@ -5,7 +5,7 @@ module Cucumber
   module Wire
     describe Configuration do
       let(:wire_file) { Tempfile.new('wire') }
-      let(:config) { Configuration.from_file(wire_file.path) }
+      let(:config) { described_class.from_file(wire_file.path) }
 
       def write_wire_file(contents)
         wire_file << contents
