@@ -10,7 +10,7 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ## [Unreleased]
 ### Added
-- Added some basic rubocop compliance to suite (More fixes to come) ([#69](https://github.com/cucumber/cucumber-ruby-wire/pull/69))
+- Added some basic rubocop compliance to suite (More fixes to come) ([#69](https://github.com/cucumber/cucumber-ruby-wire/pull/69) [#70](https://github.com/cucumber/cucumber-ruby-wire/pull/70))
 
 ### Changed
 
