@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'socket'
 
@@ -23,14 +25,12 @@ class FakeWireServer
   end
 
   def open_session_on(socket, io)
-    begin
-      on_message = lambda { |message| io.puts message }
-      SocketSession.new(socket, @protocol_table, @delays, on_message).start
-    rescue Exception => e
-      raise e
-    ensure
-      socket.close
-    end
+    on_message = lambda { |message| io.puts message }
+    SocketSession.new(socket, @protocol_table, @delays, on_message).start
+  rescue Exception => e
+    raise e
+  ensure
+    socket.close
   end
 
   class SocketSession
@@ -56,10 +56,10 @@ class FakeWireServer
         send_response(protocol_entry['response'])
       else
         serialized_exception = { message: "Not understood: #{data}", backtrace: [] }
-        send_response(['fail', serialized_exception ].to_json)
+        send_response(['fail', serialized_exception].to_json)
       end
     rescue => e
-      send_response(['fail', { message: e.message, backtrace: e.backtrace, exception: e.class } ].to_json)
+      send_response(['fail', { message: e.message, backtrace: e.backtrace, exception: e.class }].to_json)
     end
 
     def response_to(data)

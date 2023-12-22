@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module Cucumber
   module Wire
-    # Proxy for an exception that occured at the remote end of the wire
+    # Proxy for an exception that occurred at the remote end of the wire
     class Exception < StandardError
       module CanSetName
         attr_writer :exception_name
@@ -12,17 +14,19 @@ module Cucumber
 
       def initialize(args, config)
         super args['message']
+
         if args['exception']
           self.class.extend(CanSetName)
           self.class.exception_name = "#{args['exception']} from #{config}"
         end
-        if args['backtrace']
-          @backtrace = if args['backtrace'].is_a?(String)
-              args['backtrace'].split("\n") # TODO: change cuke4nuke to pass an array instead of a big string
-            else
-              args['backtrace']
-            end
-        end
+
+        return unless args['backtrace']
+
+        @backtrace = if args['backtrace'].is_a?(String)
+                       args['backtrace'].split("\n") # TODO: change cuke4nuke to pass an array instead of a big string
+                     else
+                       args['backtrace']
+                     end
       end
 
       def backtrace

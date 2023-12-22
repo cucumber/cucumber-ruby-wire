@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml'
 require 'erb'
 
@@ -19,7 +21,7 @@ module Cucumber
       end
 
       def timeout(message = nil)
-        return @timeouts[message.to_s] || 3
+        @timeouts[message.to_s] || 3
       end
 
       def to_s

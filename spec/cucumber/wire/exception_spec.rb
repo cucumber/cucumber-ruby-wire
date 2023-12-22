@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cucumber/wire/exception'
 require 'cucumber/wire/configuration'
 
@@ -5,7 +7,7 @@ module Cucumber
   module Wire
     describe Exception do
       before(:each) do
-        @config = Configuration.new('host' => 'localhost', 'port' => 54321)
+        @config = Configuration.new('host' => 'localhost', 'port' => 54_321)
       end
 
       def exception
@@ -38,11 +40,11 @@ module Cucumber
 
       describe 'with a custom backtrace' do
         before(:each) do
-          @data = { 'message' => 'foo', 'backtrace' => ['foo', 'bar', 'baz'] }
+          @data = { 'message' => 'foo', 'backtrace' => %w[foo bar baz] }
         end
 
         it '#backrace returns the custom backtrace' do
-          expect(exception.backtrace).to eq(['foo', 'bar', 'baz'])
+          expect(exception.backtrace).to eq(%w[foo bar baz])
         end
       end
     end

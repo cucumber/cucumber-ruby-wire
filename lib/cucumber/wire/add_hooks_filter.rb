@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Cucumber
   module Wire
     class AddHooksFilter < Core::Filter.new(:connections)
       def test_case(test_case)
-        test_case.
-          with_steps([before_hook(test_case)] + test_case.test_steps + [after_hook(test_case)]).
-          describe_to receiver
+        test_case
+          .with_steps([before_hook(test_case)] + test_case.test_steps + [after_hook(test_case)])
+          .describe_to receiver
       end
 
       def before_hook(test_case)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cucumber/wire/connections'
 require 'cucumber/wire/add_hooks_filter'
 require 'cucumber/step_match_search'

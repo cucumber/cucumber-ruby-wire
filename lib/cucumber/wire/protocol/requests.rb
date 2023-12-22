@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cucumber/wire/request_handler'
 require 'cucumber/wire/step_argument'
 
@@ -20,7 +22,7 @@ module Cucumber
             end
           end
 
-          alias :handle_step_matches :handle_success
+          alias handle_step_matches handle_success
 
           private
 
@@ -51,7 +53,7 @@ module Cucumber
             snippet_text
           end
 
-          alias :handle_snippet_text :handle_success
+          alias handle_snippet_text handle_success
         end
 
         class Invoke < RequestHandler
@@ -82,7 +84,7 @@ module Cucumber
             @connection.diff_ok
           end
 
-          alias :handle_step_failed :handle_fail
+          alias handle_step_failed handle_fail
 
           private
 
@@ -92,11 +94,11 @@ module Cucumber
         end
 
         class DiffFailed < RequestHandler
-          alias :handle_step_failed :handle_fail
+          alias handle_step_failed handle_fail
         end
 
         class DiffOk < RequestHandler
-          alias :handle_step_failed :handle_fail
+          alias handle_step_failed handle_fail
         end
 
         class HookRequestHandler < RequestHandler
