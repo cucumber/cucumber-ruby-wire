@@ -22,7 +22,7 @@ module Cucumber
         @message, @params = message, params
       end
 
-      def to_json
+      def to_json(*_args)
         packet = [@message]
         packet << @params if @params
         JSON.generate(packet)
