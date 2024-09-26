@@ -60,7 +60,7 @@ module Cucumber
         else
           @socket = TCPSocket.new(@config.host, @config.port)
         end
-      rescue Errno::ECONNREFUSED => exception
+      rescue Errno::ECONNREFUSED => e
         raise(ConnectionError, "Unable to contact the wire server at #{@config}. Is it up?")
       end
     end
