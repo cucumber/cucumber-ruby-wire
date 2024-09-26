@@ -29,10 +29,10 @@ module WireHelper
   def start_wire_server
     @messages_received = []
     reader, writer = IO.pipe
-    @wire_pid = fork {
+    @wire_pid = fork do
       reader.close
       @server.run(writer)
-    }
+    end
     writer.close
     Thread.new do
       while message = reader.gets
