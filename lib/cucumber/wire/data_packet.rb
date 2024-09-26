@@ -19,7 +19,8 @@ module Cucumber
       attr_reader :message, :params
 
       def initialize(message, params = nil)
-        @message, @params = message, params
+        @message = message
+        @params = params
       end
 
       def to_json(*_args)
