@@ -11,7 +11,11 @@ module Cucumber
         @connection = connection
         @registry   = registry
         @id              = data['id']
-        @regexp_source   = Regexp.new(data['regexp']) rescue data['regexp'] || 'Unknown'
+        @regexp_source   = begin
+          Regexp.new(data['regexp'])
+        rescue StandardError
+          data['regexp'] || 'Unknown'
+        end
         @expression      = registry.create_expression(@regexp_source)
         @location        = Core::Test::Location.from_file_colon_line(data['source'] || 'unknown:0')
       end
