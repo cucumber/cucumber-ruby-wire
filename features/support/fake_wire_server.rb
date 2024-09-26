@@ -69,7 +69,7 @@ class FakeWireServer
     end
 
     def send_response(response)
-      @socket.puts response + "\n"
+      @socket.puts("#{response}\n")
     end
 
     def delay(data)
