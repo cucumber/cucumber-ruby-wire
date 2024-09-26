@@ -10,9 +10,10 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 
 ## [Unreleased]
 ### Added
-- Added some basic rubocop compliance to suite (More fixes to come) ([#69](https://github.com/cucumber/cucumber-ruby-wire/pull/69) [#70](https://github.com/cucumber/cucumber-ruby-wire/pull/70))
+- Added some basic rubocop compliance to suite (More fixes to come) ([#69](https://github.com/cucumber/cucumber-ruby-wire/pull/69) [#70](https://github.com/cucumber/cucumber-ruby-wire/pull/70) [#71](https://github.com/cucumber/cucumber-ruby-wire/pull/71))
 
 ### Changed
+- Minimum ruby version is now 3.0 ([#71](https://github.com/cucumber/cucumber-ruby-wire/pull/71))
 
 ### Fixed
 
