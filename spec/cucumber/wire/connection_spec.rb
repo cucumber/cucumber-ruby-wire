@@ -4,6 +4,8 @@ require 'cucumber/wire/connection'
 require 'cucumber/wire/configuration'
 
 describe Cucumber::Wire::Connection do
+  subject(:connection) { test_connection.new(config) }
+
   let(:test_connection) do
     Class.new(described_class) do
       attr_accessor :socket
@@ -27,37 +29,36 @@ describe Cucumber::Wire::Connection do
         'localhost'
       end
 
-    def port
-      '3902'
+      def port
+        '3902'
+      end
     end
   end
+  let(:socket) { double('socket').as_null_object }
+  let(:config) { test_configuration.new }
 
-  before(:each) do
-    @config = test_configuration.new
-    @connection = test_connection.new(@config)
-    @connection.socket = @socket = double('socket').as_null_object
-    @response = '["response"]'
-  end
+  before(:each) { connection.socket = socket }
 
   it 're-raises a timeout error' do
     allow(Timeout).to receive(:timeout).and_raise(Timeout::Error.new(''))
-    expect { @connection.call_remote(nil, :foo, []) }.to raise_error(Timeout::Error)
+
+    expect { connection.call_remote(nil, :foo, []) }.to raise_error(Timeout::Error)
   end
 
   it 'ignores timeout errors when configured to do so' do
-    @config.custom_timeout[:foo] = :never
+    config.custom_timeout[:foo] = :never
 
-    allow(@socket).to receive(:gets) { @response }
+    allow(socket).to receive(:gets).and_return('["response"]')
 
     handler = double(handle_response: :response)
 
-    expect(@connection.call_remote(handler, :foo, [])).to eq(:response)
+    expect(connection.call_remote(handler, :foo, [])).to eq(:response)
   end
 
   it 'raises an exception on remote connection closed' do
-    @config.custom_timeout[:foo] = :never
+    config.custom_timeout[:foo] = :never
+    allow(socket).to receive(:gets)
 
-    allow(@socket).to receive(:gets)
-    expect { @connection.call_remote(nil, :foo, []) }.to raise_error(Cucumber::Wire::Exception, 'Remote Socket with localhost:3902 closed.')
+    expect { connection.call_remote(nil, :foo, []) }.to raise_error(Cucumber::Wire::Exception, 'Remote Socket with localhost:3902 closed.')
   end
 end
