@@ -9,27 +9,23 @@ describe Cucumber::Wire::Connection do
       attr_accessor :socket
     end
   end
+  let(:test_configuration) do
+    Class.new do
+      attr_reader :custom_timeout
 
-  # class TestConnection < Connection
-  #   attr_accessor :socket
-  # end
+      def initialize
+        @custom_timeout = {}
+      end
 
-  class TestConfiguration
-    attr_reader :custom_timeout
+      def timeout(message = nil)
+        return :default_timeout if message.nil?
 
-    def initialize
-      @custom_timeout = {}
-    end
+        @custom_timeout[message] || Cucumber::Wire::Configuration::DEFAULT_TIMEOUTS.fetch(message)
+      end
 
-    def timeout(message = nil)
-      return :default_timeout if message.nil?
-
-      @custom_timeout[message] || Cucumber::Wire::Configuration::DEFAULT_TIMEOUTS.fetch(message)
-    end
-
-    def host
-      'localhost'
-    end
+      def host
+        'localhost'
+      end
 
     def port
       '3902'
@@ -37,7 +33,7 @@ describe Cucumber::Wire::Connection do
   end
 
   before(:each) do
-    @config = TestConfiguration.new
+    @config = test_configuration.new
     @connection = test_connection.new(@config)
     @connection.socket = @socket = double('socket').as_null_object
     @response = '["response"]'
