@@ -12,21 +12,21 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://cucumber.io'
   s.platform    = Gem::Platform::RUBY
   s.license     = 'MIT'
-  s.required_ruby_version = '>= 2.6'
-  s.required_rubygems_version = '>= 3.0.3'
+  s.required_ruby_version = '>= 3.0'
+  s.required_rubygems_version = '>= 3.2.8'
 
-  s.add_dependency 'cucumber-core', '> 10.1', '< 14'
+  s.add_dependency 'cucumber-core', '> 11', '< 15'
   s.add_dependency 'cucumber-cucumber-expressions', '> 14', '< 18'
 
-  s.add_development_dependency 'aruba', '~> 2.0'
-  s.add_development_dependency 'cucumber', '> 7.1', '< 10'
-  s.add_development_dependency 'rake', '~> 13.1'
-  s.add_development_dependency 'rspec', '~> 3.12'
-  s.add_development_dependency 'rubocop', '~> 1.44.1'
+  s.add_development_dependency 'aruba', '~> 2.2'
+  s.add_development_dependency 'cucumber', '> 8', '< 10'
+  s.add_development_dependency 'rake', '~> 13.2'
+  s.add_development_dependency 'rspec', '~> 3.13'
+  s.add_development_dependency 'rubocop', '~> 1.66.1'
   s.add_development_dependency 'rubocop-packaging', '~> 0.5.2'
-  s.add_development_dependency 'rubocop-performance', '~> 1.17.1'
-  s.add_development_dependency 'rubocop-rake', '~> 0.5.0'
-  s.add_development_dependency 'rubocop-rspec', '~> 2.14.2'
+  s.add_development_dependency 'rubocop-performance', '~> 1.22.1'
+  s.add_development_dependency 'rubocop-rake', '~> 0.6.0'
+  s.add_development_dependency 'rubocop-rspec', '~> 3.0.5'
 
   s.files = Dir['CHANGELOG.md', 'CHANGELOG.old.md', 'CONTRIBUTING.md', 'README.md', 'LICENSE', 'lib/**/*']
   s.rdoc_options     = ['--charset=UTF-8']
