@@ -29,7 +29,7 @@ module Cucumber
       end
 
       def handle_with(handler)
-        handler.send("handle_#{@message}", @params)
+        handler.send(:"handle_#{@message}", @params)
       end
     end
   end

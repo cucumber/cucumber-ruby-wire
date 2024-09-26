@@ -7,8 +7,11 @@ require:
   - rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.0
   NewCops: enable
+
+Gemspec/DevelopmentDependencies:
+  Enabled: false
 
 # Disabled on our repo's to enable polyglot-release
 Gemspec/RequireMFA:
