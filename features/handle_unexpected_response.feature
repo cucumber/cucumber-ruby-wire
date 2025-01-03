@@ -25,7 +25,7 @@ Feature: Handle unexpected response
       | ["begin_scenario"]                                   | ["yikes"]                           |
       | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[{"id":"1", "args":[]}]] |
     When I run `cucumber -f pretty`
-    Then the output should contain:
+    Then the output should match:
       """
-      undefined method `handle_yikes'
+      undefined method [`']handle_yikes'
       """
