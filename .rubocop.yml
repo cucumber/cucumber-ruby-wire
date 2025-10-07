@@ -1,12 +1,10 @@
 inherit_from: .rubocop_todo.yml
 
 plugins:
-  - rubocop-rspec
-
-require:
-  - rubocop-rake
   - rubocop-packaging
   - rubocop-performance
+  - rubocop-rake
+  - rubocop-rspec
 
 AllCops:
   TargetRubyVersion: 3.1
