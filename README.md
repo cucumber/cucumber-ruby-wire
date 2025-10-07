@@ -2,17 +2,15 @@
 
 # cucumber-wire
 
-This gem was extracted from the [cucumber gem](https://github.com/cucumber/cucumber-ruby), and remains a runtime dependency to that gem.
+This gem was extracted from the [cucumber gem](https://github.com/cucumber/cucumber-ruby), and is now an opt-in plugin there
 
 Its tests are a bit hairy and prone to the occasional flicker.
 
-In the future, it may become an opt-in plugin rather than a direct dependency on every Cucumber.
-
 ## Configuration
 
-You can configure the connection using a YAML file called a `.wire` file:
+You can configure the connection using a YML file called a `.wire` file:
 
-```yaml
+```yml
 host: localhost
 port: 54321
 timeout:
@@ -26,11 +24,11 @@ timeout:
 
 The default timeout is 120 seconds. `connect` has a default timeout of 11 seconds.
 
-### YAML with ERB templating
+### YML with ERB templating
 
 The file format is YAML, with ERB templating, so you could make the configuration configurable:
 
-```yaml,erb
+```yml,erb
 host: localhost
 port: 54321
 timeout:
