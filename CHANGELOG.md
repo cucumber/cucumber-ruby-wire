@@ -13,6 +13,8 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 - Added some basic rubocop compliance to suite (More fixes to come) ([#69](https://github.com/cucumber/cucumber-ruby-wire/pull/69) [#70](https://github.com/cucumber/cucumber-ruby-wire/pull/70))
 
 ### Changed
+- Minimum ruby version is now 3.1 ([#82](https://github.com/cucumber/cucumber-ruby-wire/pull/82))
+- Enabled latest versions of `cucumber-core` and `cucumber-expressions` ([#82](https://github.com/cucumber/cucumber-ruby-wire/pull/82))
 
 ### Fixed
 
