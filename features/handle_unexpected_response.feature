@@ -27,5 +27,5 @@ Feature: Handle unexpected response
     When I run `cucumber -f pretty`
     Then the output should contain:
       """
-      undefined method `handle_yikes'
+      Undefined method 'handle_yikes'
       """
