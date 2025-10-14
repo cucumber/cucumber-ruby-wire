@@ -17,6 +17,7 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 - Enabled latest versions of `cucumber-core` and `cucumber-expressions` ([#82](https://github.com/cucumber/cucumber-ruby-wire/pull/82))
 
 ### Fixed
+- When unknown errors are called, a more Ruby 3.5-esque way of displaying `NoMethodError` is performed ([#85](https://github.com/cucumber/cucumber-ruby-wire/pull/85))
 
 ## [7.0.0] - 2023-11-10
 ### Changed
