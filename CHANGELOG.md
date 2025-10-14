@@ -9,6 +9,8 @@ This document is formatted according to the principles of [Keep A CHANGELOG](htt
 Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CONTRIBUTING.md) for more info on how to contribute to Cucumber.
 
 ## [Unreleased]
+
+## [8.0.0] - 2025-10-14
 ### Added
 - Added some basic rubocop compliance to suite (More fixes to come) ([#69](https://github.com/cucumber/cucumber-ruby-wire/pull/69) [#70](https://github.com/cucumber/cucumber-ruby-wire/pull/70) [#84](https://github.com/cucumber/cucumber-ruby-wire/pull/84))
 
@@ -61,7 +63,8 @@ do so, use `Cucumber::Wire::Plugin.installed?`.
 This brings breaking changes because of internal changes in Cucumber::Messages.
 ([#44](https://github.com/cucumber/cucumber-ruby-wire/pull/44))
 
-[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v7.0.0...HEAD
+[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v8.0.0...HEAD
+[8.0.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v7.0.0...v8.0.0
 [7.0.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.1...v7.0.0
 [6.2.1]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.0...v6.2.1
 [6.2.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.1.1...v6.2.0
