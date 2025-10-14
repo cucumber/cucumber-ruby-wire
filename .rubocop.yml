@@ -10,6 +10,9 @@ AllCops:
   TargetRubyVersion: 3.1
   NewCops: enable
 
+Gemspec/DevelopmentDependencies:
+  Enabled: false
+
 # Disabled on our repo's to enable polyglot-release
 Gemspec/RequireMFA:
   Enabled: false

@@ -2,7 +2,7 @@
 
 Given(/^there is a wire server (running |)on port (\d+) which understands the following protocol:$/) do |running, port, table|
   protocol = table.hashes.map do |table_hash|
-    table_hash['response'] = table_hash['response'].gsub(/\n/, '\n')
+    table_hash['response'] = table_hash['response'].gsub("\n", '\n')
     table_hash
   end
 
@@ -29,10 +29,10 @@ module WireHelper
   def start_wire_server
     @messages_received = []
     reader, writer = IO.pipe
-    @wire_pid = fork {
+    @wire_pid = fork do
       reader.close
       @server.run(writer)
-    }
+    end
     writer.close
     Thread.new do
       while message = reader.gets

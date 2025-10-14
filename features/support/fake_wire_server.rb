@@ -5,7 +5,8 @@ require 'socket'
 
 class FakeWireServer
   def initialize(port, protocol_table)
-    @port, @protocol_table = port, protocol_table
+    @port = port
+    @protocol_table = protocol_table
     @delays = {}
   end
 
@@ -69,7 +70,7 @@ class FakeWireServer
     end
 
     def send_response(response)
-      @socket.puts response + "\n"
+      @socket.puts("#{response}\n")
     end
 
     def delay(data)

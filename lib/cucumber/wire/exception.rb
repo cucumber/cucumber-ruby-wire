@@ -13,7 +13,7 @@ module Cucumber
       end
 
       def initialize(args, config)
-        super args['message']
+        super(args['message'])
 
         if args['exception']
           self.class.extend(CanSetName)

@@ -19,17 +19,18 @@ module Cucumber
       attr_reader :message, :params
 
       def initialize(message, params = nil)
-        @message, @params = message, params
+        @message = message
+        @params = params
       end
 
-      def to_json
+      def to_json(*_args)
         packet = [@message]
         packet << @params if @params
         JSON.generate(packet)
       end
 
       def handle_with(handler)
-        handler.send("handle_#{@message}", @params)
+        handler.send(:"handle_#{@message}", @params)
       end
     end
   end

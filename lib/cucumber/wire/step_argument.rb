@@ -10,7 +10,8 @@ module Cucumber
       attr_reader :offset
 
       def initialize(offset, val)
-        @offset, @value = offset, val
+        @offset = offset
+        @value = val
       end
 
       def value(_current_world)
