@@ -16,7 +16,7 @@ module Cucumber
       def initialize(args)
         @host = args['host']
         @port = args['port']
-        @unix = args['unix'] if RUBY_PLATFORM !~ /mingw|mswin/
+        @unix = args['unix'] unless RUBY_PLATFORM.match?(/mingw|mswin/)
         @timeouts = DEFAULT_TIMEOUTS.merge(args['timeout'] || {})
       end
 
