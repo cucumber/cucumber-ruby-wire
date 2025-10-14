@@ -1,10 +1,12 @@
-[![Test cucumber-wire](https://github.com/cucumber/cucumber-ruby-wire/actions/workflows/cucumber-ruby-wire.yml/badge.svg)](https://github.com/cucumber/cucumber-ruby-wire/actions/workflows/cucumber-ruby-wire.yml)
+[![Test cucumber-wire](https://github.com/cucumber/cucumber-ruby-wire/actions/workflows/test.yaml/badge.svg)](https://github.com/cucumber/cucumber-ruby-wire/actions/workflows/test.yaml)
 
 # cucumber-wire
 
-This gem was extracted from the [cucumber gem](https://github.com/cucumber/cucumber-ruby), and is now an opt-in plugin there
+This gem was extracted from the [cucumber gem](https://github.com/cucumber/cucumber-ruby)
 
-Its tests are a bit hairy and prone to the occasional flicker.
+This is available as an optional runtime dependency for cucumber-ruby and also as a runtime dependency for cucumber cpp.
+
+The tests here are a bit hairy and prone to the occasional flicker.
 
 ## Configuration
 
