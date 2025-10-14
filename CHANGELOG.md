@@ -13,8 +13,11 @@ Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blo
 - Added some basic rubocop compliance to suite (More fixes to come) ([#69](https://github.com/cucumber/cucumber-ruby-wire/pull/69) [#70](https://github.com/cucumber/cucumber-ruby-wire/pull/70))
 
 ### Changed
+- Minimum ruby version is now 3.1 ([#82](https://github.com/cucumber/cucumber-ruby-wire/pull/82))
+- Enabled latest versions of `cucumber-core` and `cucumber-expressions` ([#82](https://github.com/cucumber/cucumber-ruby-wire/pull/82))
 
 ### Fixed
+- When unknown errors are called, a more Ruby 3.5-esque way of displaying `NoMethodError` is performed ([#85](https://github.com/cucumber/cucumber-ruby-wire/pull/85))
 
 ## [7.0.0] - 2023-11-10
 ### Changed
