@@ -1,5 +1,7 @@
 name: Test cucumber-wire
 
+permissions: {}
+
 on:
   push:
     branches:
