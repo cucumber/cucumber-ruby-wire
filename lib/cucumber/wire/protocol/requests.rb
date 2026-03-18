@@ -129,9 +129,8 @@ module Cucumber
           end
         end
 
-        BeginScenario = Class.new(HookRequestHandler)
-
-        EndScenario = Class.new(HookRequestHandler)
+        class BeginScenario < HookRequestHandler; end
+        class EndScenario < HookRequestHandler; end
       end
     end
   end
