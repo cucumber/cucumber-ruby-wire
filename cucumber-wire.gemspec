@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'cucumber-core', '>= 16.2', '< 17'
   s.add_dependency 'cucumber-cucumber-expressions', '> 17', '< 20'
 
-  s.add_development_dependency 'aruba', '~> 2.2'
+  s.add_development_dependency 'aruba', '~> 3.0'
   s.add_development_dependency 'cucumber', '> 8', '< 12'
   s.add_development_dependency 'rake', '~> 13.3'
   s.add_development_dependency 'rspec', '~> 3.13'
