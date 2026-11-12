@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'cucumber-cucumber-expressions', '> 17', '< 20'
 
   s.add_development_dependency 'aruba', '~> 2.2'
-  s.add_development_dependency 'cucumber', '> 8', '< 12'
+  s.add_development_dependency 'cucumber', '> 8', '< 13'
   s.add_development_dependency 'rake', '~> 13.3'
   s.add_development_dependency 'rspec', '~> 3.13'
   s.add_development_dependency 'rubocop', '~> 1.84.0'
