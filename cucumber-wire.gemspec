@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 3.2.8'
 
   s.add_dependency 'cucumber-core', '>= 16.2', '< 17'
-  s.add_dependency 'cucumber-cucumber-expressions', '> 17', '< 20'
+  s.add_dependency 'cucumber-cucumber-expressions', '> 17', '< 21'
 
   s.add_development_dependency 'aruba', '~> 2.2'
   s.add_development_dependency 'cucumber', '> 8', '< 12'
