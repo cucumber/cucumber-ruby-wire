@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'cucumber', '> 8', '< 12'
   s.add_development_dependency 'rake', '~> 13.3'
   s.add_development_dependency 'rspec', '~> 3.13'
-  s.add_development_dependency 'rubocop', '~> 1.84.0'
+  s.add_development_dependency 'rubocop', '~> 1.92.0'
   s.add_development_dependency 'rubocop-packaging', '~> 0.6.0'
   s.add_development_dependency 'rubocop-performance', '~> 1.26.0'
   s.add_development_dependency 'rubocop-rake', '~> 0.7.1'
