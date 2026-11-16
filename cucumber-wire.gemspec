@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://cucumber.io'
   s.platform    = Gem::Platform::RUBY
   s.license     = 'MIT'
-  s.required_ruby_version = '>= 3.2'
+  s.required_ruby_version = '>= 3.3'
   s.required_rubygems_version = '>= 3.2.8'
 
   s.add_dependency 'cucumber-core', '> 18', '< 22'
