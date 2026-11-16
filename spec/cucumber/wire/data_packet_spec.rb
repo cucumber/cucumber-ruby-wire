@@ -2,42 +2,38 @@
 
 require 'cucumber/wire/data_packet'
 
-module Cucumber
-  module Wire
-    describe DataPacket do
-      describe '#to_json' do
-        it 'converts params to a JSON hash' do
-          packet = described_class.new('test_message', foo: :bar)
+describe Cucumber::Wire::DataPacket do
+  describe '#to_json' do
+    it 'converts params to a JSON hash' do
+      packet = described_class.new('test_message', foo: :bar)
 
-          expect(packet.to_json).to eq('["test_message",{"foo":"bar"}]')
-        end
+      expect(packet.to_json).to eq('["test_message",{"foo":"bar"}]')
+    end
 
-        it 'does not pass blank params' do
-          packet = described_class.new('test_message')
+    it 'does not pass blank params' do
+      packet = described_class.new('test_message')
 
-          expect(packet.to_json).to eq('["test_message"]')
-        end
-      end
+      expect(packet.to_json).to eq('["test_message"]')
+    end
+  end
 
-      describe '.parse' do
-        it 'understands a raw packet containing null parameters' do
-          packet = described_class.parse('["test_message",null]')
+  describe '.parse' do
+    it 'understands a raw packet containing null parameters' do
+      packet = described_class.parse('["test_message",null]')
 
-          expect(packet).to have_attributes(message: 'test_message', params: nil)
-        end
+      expect(packet).to have_attributes(message: 'test_message', params: nil)
+    end
 
-        it 'understands a raw packet containing no parameters' do
-          packet = described_class.parse('["test_message"]')
+    it 'understands a raw packet containing no parameters' do
+      packet = described_class.parse('["test_message"]')
 
-          expect(packet).to have_attributes(message: 'test_message', params: nil)
-        end
+      expect(packet).to have_attributes(message: 'test_message', params: nil)
+    end
 
-        it 'understands a raw packet containging parameters data' do
-          packet = described_class.parse('["test_message",{"foo":"bar"}]')
+    it 'understands a raw packet containging parameters data' do
+      packet = described_class.parse('["test_message",{"foo":"bar"}]')
 
-          expect(packet.params['foo']).to eq('bar')
-        end
-      end
+      expect(packet.params['foo']).to eq('bar')
     end
   end
 end
