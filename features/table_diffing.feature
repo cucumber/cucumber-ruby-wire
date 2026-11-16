@@ -48,6 +48,7 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 failed)
       1 step (1 failed)
+
       """
 
   Scenario: Invoke a step definition tries to diff the table and passes
@@ -65,6 +66,7 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 passed)
       1 step (1 passed)
+
       """
 
   @spawn
@@ -91,6 +93,7 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 failed)
       1 step (1 failed)
+
       """
 
   @spawn
@@ -119,4 +122,5 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 failed)
       1 step (1 failed)
+
       """

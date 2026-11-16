@@ -37,7 +37,7 @@ describe Cucumber::Wire::Connection do
   let(:socket) { double('socket').as_null_object }
   let(:config) { test_configuration.new }
 
-  before(:each) { connection.socket = socket }
+  before { connection.socket = socket }
 
   it 're-raises a timeout error' do
     allow(Timeout).to receive(:timeout).and_raise(Timeout::Error.new(''))

@@ -10,8 +10,12 @@ module Cucumber
       attr_reader :config, :registry
       private :config, :registry
 
-      def self.installed?
-        @@installed ||= false
+      class << self
+        attr_writer :installed
+
+        def installed?
+          @installed ||= false
+        end
       end
 
       def initialize(config, registry)
@@ -20,12 +24,16 @@ module Cucumber
       end
 
       def install
-        connections = Connections.new(wire_files.map { |f| create_connection(f) }, config, registry)
+        connections = create_connections
         config.filters << Filters::ActivateSteps.new(StepMatchSearch.new(connections.method(:step_matches), @config), @config)
         config.filters << AddHooksFilter.new(connections) unless @config.dry_run?
         config.register_snippet_generator Snippet::Generator.new(connections)
 
-        @@installed = true
+        self.class.installed = true
+      end
+
+      def create_connections
+        Connections.new(wire_files.map { |f| create_connection(f) }, config, registry)
       end
 
       def create_connection(wire_file)

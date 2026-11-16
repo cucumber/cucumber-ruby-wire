@@ -42,15 +42,21 @@ Feature: Invoke message
       | ["invoke",{"id":"1","args":[]}]                      | ["pending", "I'll do it later"]     |
       | ["end_scenario"]                                     | ["success"]                         |
     When I run `cucumber -f pretty -q`
-    And it should pass with exactly:
+    And it should fail with exactly:
       """
       Feature: High strung
 
         Scenario: Wired
           Given we're all wired
+            I'll do it later (Cucumber::Pending)
+            features/wired.feature:3:in `we're all wired'
+
+      Pending Scenarios:
+      cucumber features/wired.feature:2
 
       1 scenario (1 pending)
       1 step (1 pending)
+
       """
 
   Scenario: Invoke a step definition which passes

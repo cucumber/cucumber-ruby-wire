@@ -82,4 +82,5 @@ Feature: Wire protocol tags
 
     1 scenario (1 passed)
     1 step (1 passed)
+
     """

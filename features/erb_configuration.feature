@@ -26,9 +26,12 @@ Feature: ERB configuration
         | request                                              | response       |
         | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[]] |
       When I run `cucumber --dry-run --no-snippets -f progress`
-      Then it should pass with:
+      Then it should fail with:
         """
         U
+
+        Undefined Scenarios:
+        cucumber features/wired.feature:2 # Scenario: Wired
 
         1 scenario (1 undefined)
         1 step (1 undefined)
@@ -45,9 +48,12 @@ Feature: ERB configuration
         | request                                              | response       |
         | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[]] |
       When I run `cucumber --dry-run --no-snippets -f progress --publish-quiet`
-      Then it should pass with:
+      Then it should fail with:
         """
         U
+
+        Undefined Scenarios:
+        cucumber features/wired.feature:2 # Scenario: Wired
 
         1 scenario (1 undefined)
         1 step (1 undefined)

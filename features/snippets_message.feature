@@ -30,12 +30,17 @@ Feature: Snippets message
       | ["end_scenario"]                                                                                 | ["success"]                      |
     When I run `cucumber -f pretty --publish-quiet`
     Then the stderr should not contain anything
-    And it should pass with:
+    And it should fail with:
       """
       Feature: High strung
 
         Scenario: Wired         # features/wired.feature:2
           Given we're all wired # features/wired.feature:3
+            Undefined step: "we're all wired" (Cucumber::Core::Test::Result::Undefined)
+            features/wired.feature:3:in `we're all wired'
+
+      Undefined Scenarios:
+      cucumber features/wired.feature:2 # Scenario: Wired
 
       1 scenario (1 undefined)
       1 step (1 undefined)
