@@ -36,9 +36,12 @@ Feature: Step matches message
       | request                                              | response       |
       | ["step_matches",{"name_to_match":"we're all wired"}] | ["success",[]] |
     When I run `cucumber --dry-run --no-snippets -f progress`
-    And it should pass with:
+    And it should fail with:
       """
       U
+
+      Undefined Scenarios:
+      cucumber features/wired.feature:2 # Scenario: Wired
 
       1 scenario (1 undefined)
       1 step (1 undefined)

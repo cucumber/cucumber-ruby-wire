@@ -32,7 +32,7 @@ Feature: Wire protocol table diffing
       | ["end_scenario"]                                     | ["success"]                                                                                          |
     When I run `cucumber -f progress --backtrace -q`
     Then the stderr should not contain anything
-    And it should fail with exactly:
+    And it should fail with exact output:
       """
       F
 
@@ -59,7 +59,7 @@ Feature: Wire protocol table diffing
       | ["diff_ok"]                                          | ["success"]                            |
       | ["end_scenario"]                                     | ["success"]                            |
     When I run `cucumber -f progress -q`
-    Then it should pass with exactly:
+    Then it should pass with exact output:
       """
       .
 
@@ -77,7 +77,7 @@ Feature: Wire protocol table diffing
       | ["diff_ok"]                                          | ["fail",{"message":"I wanted things to be different for us"}] |
       | ["end_scenario"]                                     | ["success"]                                                   |
     When I run `cucumber -f progress -q`
-    Then it should fail with exactly:
+    Then it should fail with exact output:
       """
       F
 
@@ -102,7 +102,7 @@ Feature: Wire protocol table diffing
       | ["invoke",{"id":"1","args":[]}]                      | ["diff!",[[["a"]],[["b"]]]]         |
       | ["end_scenario"]                                     | ["success"]                         |
     When I run `cucumber -f progress -q`
-    And it should fail with exactly:
+    And it should fail with exact output:
       """
       F
 

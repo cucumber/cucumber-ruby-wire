@@ -67,7 +67,7 @@ Feature: Wire protocol tags
     | ["end_scenario", {"tags":["bar","baz","foo"]}]       | ["success"]                         |
   When I run `cucumber -f pretty -q`
   Then the stderr should not contain anything
-  And it should pass with exactly:
+  And it should pass with exact output:
     """
     @foo @bar
     Feature: Wired
