@@ -35,9 +35,7 @@ module WireHelper
     end
     writer.close
     Thread.new do
-      while message = reader.gets
-        @messages_received << message.strip
-      end
+      reader.each_line { |message| @messages_received << message.strip }
     end
     at_exit { stop_wire_server }
   end

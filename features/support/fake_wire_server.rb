@@ -43,21 +43,21 @@ class FakeWireServer
     end
 
     def start
-      while message = @socket.gets
-        handle(message)
-      end
+      @socket.each_line { |message| handle(message) }
     end
 
     private
 
     def handle(data)
-      if protocol_entry = response_to(data.strip)
-        sleep delay(data)
-        @on_message.call(JSON.parse(protocol_entry['request'])[0])
-        send_response(protocol_entry['response'])
-      else
-        serialized_exception = { message: "Not understood: #{data}", backtrace: [] }
-        send_response(['fail', serialized_exception].to_json)
+      response_to(data.strip).then do |protocol_entry|
+        if protocol_entry
+          sleep delay(data)
+          @on_message.call(JSON.parse(protocol_entry['request'])[0])
+          send_response(protocol_entry['response'])
+        else
+          serialized_exception = { message: "Not understood: #{data}", backtrace: [] }
+          send_response(['fail', serialized_exception].to_json)
+        end
       end
     rescue => e
       send_response(['fail', { message: e.message, backtrace: e.backtrace, exception: e.class }].to_json)
