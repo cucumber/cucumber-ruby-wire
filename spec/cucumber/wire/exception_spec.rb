@@ -4,18 +4,12 @@ require 'cucumber/wire/exception'
 require 'cucumber/wire/configuration'
 
 describe Cucumber::Wire::Exception do
-  before do
-    @config = Configuration.new('host' => 'localhost', 'port' => 54_321)
-  end
+  subject(:exception) { described_class.new(data, config) }
 
-  def exception
-    described_class.new(@data, @config)
-  end
+  let(:config) { Cucumber::Wire::Configuration.new('host' => 'localhost', 'port' => 54_321) }
 
   describe 'with just a message' do
-    before do
-      @data = { 'message' => 'foo' }
-    end
+    let(:data) { { 'message' => 'foo' } }
 
     it '#to_s as expecteds' do
       expect(exception.to_s).to eq('foo')
@@ -23,9 +17,7 @@ describe Cucumber::Wire::Exception do
   end
 
   describe 'with a message and an exception' do
-    before do
-      @data = { 'message' => 'foo', 'exception' => 'Bar' }
-    end
+    let(:data) { { 'message' => 'foo', 'exception' => 'Bar' } }
 
     it '#to_s as expecteds' do
       expect(exception.to_s).to eq('foo')
@@ -37,9 +29,7 @@ describe Cucumber::Wire::Exception do
   end
 
   describe 'with a custom backtrace' do
-    before do
-      @data = { 'message' => 'foo', 'backtrace' => %w[foo bar baz] }
-    end
+    let(:data) { { 'message' => 'foo', 'backtrace' => %w[foo bar baz] } }
 
     it '#backrace returns the custom backtrace' do
       expect(exception.backtrace).to eq(%w[foo bar baz])
