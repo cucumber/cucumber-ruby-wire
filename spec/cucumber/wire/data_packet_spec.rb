@@ -23,15 +23,13 @@ module Cucumber
         it 'understands a raw packet containing null parameters' do
           packet = described_class.parse('["test_message",null]')
 
-          expect(packet.message).to eq('test_message')
-          expect(packet.params).to be_nil
+          expect(packet).to have_attributes(message: 'test_message', params: nil)
         end
 
         it 'understands a raw packet containing no parameters' do
           packet = described_class.parse('["test_message"]')
 
-          expect(packet.message).to eq('test_message')
-          expect(packet.params).to be_nil
+          expect(packet).to have_attributes(message: 'test_message', params: nil)
         end
 
         it 'understands a raw packet containging parameters data' do
