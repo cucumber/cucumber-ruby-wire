@@ -47,7 +47,7 @@ module Cucumber
       end
 
       describe 'a wire file with no timeouts specified' do
-        before(:each) do
+        before do
           write_wire_file '
             host: localhost
             port: 54321

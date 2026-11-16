@@ -106,7 +106,7 @@ module Cucumber
             super(request_params(test_case))
           end
 
-          def method_missing(name, *args, &block)
+          def method_missing(name, *args, &)
             # TODO: Hard-code this until Ruby 3.4 is a minimum then this can be removed
             raise NoMethodError, "Undefined method '#{name}' for #{self.class}"
           end

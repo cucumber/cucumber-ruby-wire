@@ -55,11 +55,7 @@ module Cucumber
       def socket
         return @socket if @socket
 
-        if @config.unix
-          @socket = UNIXSocket.new(@config.unix)
-        else
-          @socket = TCPSocket.new(@config.host, @config.port)
-        end
+        @socket = @config.unix ? UNIXSocket.new(@config.unix) : TCPSocket.new(@config.host, @config.port)
       rescue Errno::ECONNREFUSED
         raise(ConnectionError, "Unable to contact the wire server at #{@config}. Is it up?")
       end
