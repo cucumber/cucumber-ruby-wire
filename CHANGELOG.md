@@ -9,12 +9,15 @@ This document is formatted according to the principles of [Keep A CHANGELOG](htt
 Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CONTRIBUTING.md) for more info on how to contribute to Cucumber.
 
 ## [Unreleased]
+### Fixed
+- Fix trusted publishing filename
 
 ## [9.0.0] - 2026-11-16
 ### Changed
 - Minimum ruby version is now 3.3 ([#89](https://github.com/cucumber/cucumber-ruby-wire/pull/89) [#133](https://github.com/cucumber/cucumber-ruby-wire/pull/133))
 - `cucumber-core` is now restricted to `> 18, < 22` ([#89](https://github.com/cucumber/cucumber-ruby-wire/pull/89) [#133](https://github.com/cucumber/cucumber-ruby-wire/pull/133))
 - `cucumber-cucumber-expressions` minimum version is now `> 17` ([#89](https://github.com/cucumber/cucumber-ruby-wire/pull/89))
+- Begin to use trusted publishing
 
 ### Fixed
 - Acceptance tests updated for `cucumber` 12, where undefined and pending steps now always fail the run
