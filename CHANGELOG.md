@@ -9,6 +9,8 @@ This document is formatted according to the principles of [Keep A CHANGELOG](htt
 Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CONTRIBUTING.md) for more info on how to contribute to Cucumber.
 
 ## [Unreleased]
+
+## [9.0.0] - 2026-11-16
 ### Changed
 - Minimum ruby version is now 3.3 ([#89](https://github.com/cucumber/cucumber-ruby-wire/pull/89) [#133](https://github.com/cucumber/cucumber-ruby-wire/pull/133))
 - `cucumber-core` is now restricted to `> 18, < 22` ([#89](https://github.com/cucumber/cucumber-ruby-wire/pull/89) [#133](https://github.com/cucumber/cucumber-ruby-wire/pull/133))
@@ -73,7 +75,8 @@ do so, use `Cucumber::Wire::Plugin.installed?`.
 This brings breaking changes because of internal changes in Cucumber::Messages.
 ([#44](https://github.com/cucumber/cucumber-ruby-wire/pull/44))
 
-[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v8.0.0...HEAD
+[Unreleased]: https://github.com/cucumber/cucumber-ruby-wire/compare/v9.0.0...HEAD
+[9.0.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v8.0.0...v9.0.0
 [8.0.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v7.0.0...v8.0.0
 [7.0.0]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.1...v7.0.0
 [6.2.1]: https://github.com/cucumber/cucumber-ruby-wire/compare/v6.2.0...v6.2.1
