@@ -9,6 +9,16 @@ This document is formatted according to the principles of [Keep A CHANGELOG](htt
 Please visit [cucumber/CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CONTRIBUTING.md) for more info on how to contribute to Cucumber.
 
 ## [Unreleased]
+### Changed
+- Minimum ruby version is now 3.3 ([#89](https://github.com/cucumber/cucumber-ruby-wire/pull/89) [#133](https://github.com/cucumber/cucumber-ruby-wire/pull/133))
+- `cucumber-core` is now restricted to `> 18, < 22` ([#89](https://github.com/cucumber/cucumber-ruby-wire/pull/89) [#133](https://github.com/cucumber/cucumber-ruby-wire/pull/133))
+- `cucumber-cucumber-expressions` minimum version is now `> 17` ([#89](https://github.com/cucumber/cucumber-ruby-wire/pull/89))
+
+### Fixed
+- Acceptance tests updated for `cucumber` 12, where undefined and pending steps now always fail the run
+(The `--strict` option was removed) ([#133](https://github.com/cucumber/cucumber-ruby-wire/pull/133))
+- Acceptance tests updated for `aruba` 3, which no longer strips the trailing newline in `it should pass/fail with exactly:` ([#133](https://github.com/cucumber/cucumber-ruby-wire/pull/133))
+- Resolved further rubocop offenses in the library and specs ([#133](https://github.com/cucumber/cucumber-ruby-wire/pull/133))
 
 ## [8.0.0] - 2025-10-14
 ### Added
