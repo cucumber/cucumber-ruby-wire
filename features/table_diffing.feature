@@ -32,7 +32,7 @@ Feature: Wire protocol table diffing
       | ["end_scenario"]                                     | ["success"]                                                                                          |
     When I run `cucumber -f progress --backtrace -q`
     Then the stderr should not contain anything
-    And it should fail with exact output:
+    And it should fail with exactly:
       """
       F
 
@@ -48,6 +48,7 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 failed)
       1 step (1 failed)
+
       """
 
   Scenario: Invoke a step definition tries to diff the table and passes
@@ -59,12 +60,13 @@ Feature: Wire protocol table diffing
       | ["diff_ok"]                                          | ["success"]                            |
       | ["end_scenario"]                                     | ["success"]                            |
     When I run `cucumber -f progress -q`
-    Then it should pass with exact output:
+    Then it should pass with exactly:
       """
       .
 
       1 scenario (1 passed)
       1 step (1 passed)
+
       """
 
   @spawn
@@ -77,7 +79,7 @@ Feature: Wire protocol table diffing
       | ["diff_ok"]                                          | ["fail",{"message":"I wanted things to be different for us"}] |
       | ["end_scenario"]                                     | ["success"]                                                   |
     When I run `cucumber -f progress -q`
-    Then it should fail with exact output:
+    Then it should fail with exactly:
       """
       F
 
@@ -91,6 +93,7 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 failed)
       1 step (1 failed)
+
       """
 
   @spawn
@@ -102,7 +105,7 @@ Feature: Wire protocol table diffing
       | ["invoke",{"id":"1","args":[]}]                      | ["diff!",[[["a"]],[["b"]]]]         |
       | ["end_scenario"]                                     | ["success"]                         |
     When I run `cucumber -f progress -q`
-    And it should fail with exact output:
+    And it should fail with exactly:
       """
       F
 
@@ -119,4 +122,5 @@ Feature: Wire protocol table diffing
 
       1 scenario (1 failed)
       1 step (1 failed)
+
       """
